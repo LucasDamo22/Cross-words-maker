@@ -20,7 +20,7 @@ int main(){
 
     cout<< slot_teste->get_coord_init().first << " " << slot_teste->get_coord_init().second << endl;
     cout<< slot_teste->get_coord_end().first << " " << slot_teste->get_coord_end().second << endl;
-    cout<< std::hex << table->charHash('b',1,4) << endl;
+    //cout<< std::hex << table->charHash('b',1,4) << endl;
     string casa = "casa";
     string bala = "bala";
     
@@ -28,17 +28,28 @@ int main(){
 
     std::unordered_map<int, string> map;
     for(int i = 0; i < casa.length(); i++){
-        map[table->charHash(casa[i],i,casa.length())] = casa;
+        int hash = table->charHash(casa[i],i,casa.length());
+        cout<<hash<< casa[i]<<endl;
+        map[hash] = casa;
     }
     for(int i = 0; i < bala.length(); i++){
         map[table->charHash(bala[i],i,bala.length())] = bala;
     }
-    int target = table->charHash('a',1,4);
-    size_t found = map.bucket(target);
+    int target = table->charHash('c',0,4);
+    cout<<target<<endl;
+    size_t bucket_count = map.bucket_count();
+    cout<<"bucket_count: "<<bucket_count<<endl;
+
+    size_t bucket = map.bucket(target);
+
+    size_t bucket_size = map.bucket_size(bucket);
+    cout<<"bucket_size: "<<bucket_size<<endl;
+
+    cout<<"bucket: "<<bucket<<endl;
+
     
-    for(auto it = map.begin(found); it != map.end(found); it++){
-        cout<<it->first<<" "<<it->second<<endl;
-    }
+    
+    
     
       
     
