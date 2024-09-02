@@ -1,5 +1,6 @@
 #include <iostream>
 #include <utility>
+#include <unordered_map>
 #include "Slot.h"
 #include "Word.h"
 using std::cout;
@@ -19,6 +20,15 @@ int main(){
     cout<< slot_teste->get_coord_init().first << " " << slot_teste->get_coord_init().second << endl;
     cout<< slot_teste->get_coord_end().first << " " << slot_teste->get_coord_end().second << endl;
     cout<< std::hex << table->charHash('b',1,4) << endl;
+    string casa = "casa";
+
+    
+    std::unordered_map<int, string> map;
+    for(int i = 0; i < casa.length(); i++){
+        map[table->charHash(casa[i],i,casa.length())] = casa;
+    }
+
+    cout<< map[table->charHash('a',1,4)] << endl;
 
 
 }
