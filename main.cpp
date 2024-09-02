@@ -16,45 +16,37 @@ int main(){
 
     slot_teste = new Slot(coord_init, coord_end);
     WordTable *table = new WordTable();
-
-
-    cout<< slot_teste->get_coord_init().first << " " << slot_teste->get_coord_init().second << endl;
-    cout<< slot_teste->get_coord_end().first << " " << slot_teste->get_coord_end().second << endl;
-    //cout<< std::hex << table->charHash('b',1,4) << endl;
     string casa = "casa";
     string bala = "bala";
     
+    std::unordered_map<int, vector<string>> map;
+    // for(int i = 0; i < casa.length(); i++){
 
-
-    std::unordered_map<int, string> map;
+    //     int hash = table->charHash(casa[i],i,casa.length());
+    //     cout<<std::hex<<hash<<" "<< casa[i]<<" "<< i <<" "<< casa.length()<<endl;
+    //     map[hash] = casa;
+    // }
+    // for(int i = 0; i < bala.length(); i++){
+    //     int hash = table->charHash(bala[i],i,bala.length());
+    //     cout<<std::hex<<hash<<" "<< bala[i]<<" "<< i <<" "<< bala.length()<<endl;
+    //     map[hash] = bala;
+    // }
     for(int i = 0; i < casa.length(); i++){
+
         int hash = table->charHash(casa[i],i,casa.length());
-        cout<<hash<< casa[i]<<endl;
-        map[hash] = casa;
+        cout<<std::hex<<hash<<" "<< casa[i]<<" "<< i <<" "<< casa.length()<<endl;
+        map[hash].push_back(casa);
     }
     for(int i = 0; i < bala.length(); i++){
-        map[table->charHash(bala[i],i,bala.length())] = bala;
+        int hash = table->charHash(bala[i],i,bala.length());
+        cout<<std::hex<<hash<<" "<< bala[i]<<" "<< i <<" "<< bala.length()<<endl;
+        map[hash].push_back(bala);
     }
-    int target = table->charHash('c',0,4);
-    cout<<target<<endl;
-    size_t bucket_count = map.bucket_count();
-    cout<<"bucket_count: "<<bucket_count<<endl;
-
-    size_t bucket = map.bucket(target);
-
-    size_t bucket_size = map.bucket_size(bucket);
-    cout<<"bucket_size: "<<bucket_size<<endl;
-
-    cout<<"bucket: "<<bucket<<endl;
-
     
-    
-    
-    
-      
-    
-    
+    vector<string> casa_vector = map[table->charHash('c',0,4)];
 
-
+    for(int i = 0; i < casa_vector.size(); i++){
+        cout<<casa_vector[i]<<endl;
+    }
 }
 
