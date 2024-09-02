@@ -19,34 +19,21 @@ int main(){
     string casa = "casa";
     string bala = "bala";
     
-    std::unordered_map<int, vector<string>> map;
-    // for(int i = 0; i < casa.length(); i++){
-
-    //     int hash = table->charHash(casa[i],i,casa.length());
-    //     cout<<std::hex<<hash<<" "<< casa[i]<<" "<< i <<" "<< casa.length()<<endl;
-    //     map[hash] = casa;
-    // }
-    // for(int i = 0; i < bala.length(); i++){
-    //     int hash = table->charHash(bala[i],i,bala.length());
-    //     cout<<std::hex<<hash<<" "<< bala[i]<<" "<< i <<" "<< bala.length()<<endl;
-    //     map[hash] = bala;
-    // }
-    for(int i = 0; i < casa.length(); i++){
-
-        int hash = table->charHash(casa[i],i,casa.length());
-        cout<<std::hex<<hash<<" "<< casa[i]<<" "<< i <<" "<< casa.length()<<endl;
-        map[hash].push_back(casa);
+    table->add_word(casa);
+    table->add_word(bala);
+    cout<<"====================="<<endl;
+    std::vector<string> words = table->get_words('c',0,4);
+    for(int i = 0; i < words.size(); i++){
+        cout<<words[i]<<endl;
     }
-    for(int i = 0; i < bala.length(); i++){
-        int hash = table->charHash(bala[i],i,bala.length());
-        cout<<std::hex<<hash<<" "<< bala[i]<<" "<< i <<" "<< bala.length()<<endl;
-        map[hash].push_back(bala);
+    cout<<"====================="<<endl;
+    words = table->get_words('a',1,4);
+    for(int i = 0; i < words.size(); i++){
+        cout<<words[i]<<endl;
     }
+
     
-    vector<string> casa_vector = map[table->charHash('c',0,4)];
-
-    for(int i = 0; i < casa_vector.size(); i++){
-        cout<<casa_vector[i]<<endl;
-    }
+    
+   
 }
 

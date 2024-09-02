@@ -23,3 +23,16 @@ int WordTable::charHash(char c, int index, int size){
     int hashfinal = (c << 24) | (index << 16) | (size);
     return hashfinal;
 };
+
+void WordTable::add_word(string word){
+    for(int i = 0; i < word.length(); i++){
+        int hash = charHash(word[i],i,word.length());
+        //cout<<std::hex<<hash<<" "<< word[i]<<" "<< i <<" "<< word.length()<<endl;
+        map[hash].push_back(word);
+    }
+};
+
+vector<string> WordTable::get_words(char c, int index, int size){
+    int hash = charHash(c,index,size);
+    return map[hash];
+};
