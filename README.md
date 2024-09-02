@@ -1,1 +1,2 @@
 # Cross-words-maker
+- hash function done with bit shifts and masks to avoid having the situation where the sum of the ASCII value of the char and its index would be equal to ASCII value -1 and index +1
