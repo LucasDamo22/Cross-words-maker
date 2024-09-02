@@ -1,6 +1,7 @@
 #include <iostream>
 #include <utility>
 #include <unordered_map>
+#include <iterator>
 #include "Slot.h"
 #include "Word.h"
 using std::cout;
@@ -21,14 +22,27 @@ int main(){
     cout<< slot_teste->get_coord_end().first << " " << slot_teste->get_coord_end().second << endl;
     cout<< std::hex << table->charHash('b',1,4) << endl;
     string casa = "casa";
-
+    string bala = "bala";
     
+
+
     std::unordered_map<int, string> map;
     for(int i = 0; i < casa.length(); i++){
         map[table->charHash(casa[i],i,casa.length())] = casa;
     }
-
-    cout<< map[table->charHash('a',1,4)] << endl;
+    for(int i = 0; i < bala.length(); i++){
+        map[table->charHash(bala[i],i,bala.length())] = bala;
+    }
+    int target = table->charHash('a',1,4);
+    size_t found = map.bucket(target);
+    
+    for(auto it = map.begin(found); it != map.end(found); it++){
+        cout<<it->first<<" "<<it->second<<endl;
+    }
+    
+      
+    
+    
 
 
 }
