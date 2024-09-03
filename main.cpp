@@ -1,6 +1,7 @@
 #include <iostream>
 #include <utility>
 #include <unordered_map>
+#include <unordered_set>
 #include <iterator>
 #include <fstream>
 //ia
@@ -10,6 +11,7 @@
 
 #include "Slot.h"
 #include "Word.h"
+using std::unordered_set;
 using std::cout;
 using std::endl;
 using std::pair;
@@ -25,33 +27,55 @@ std::string trim_trailing_whitespace(const std::string& str) {
     return result;
 }
 //ia
+bool already_exists(unordered_set<string> &words_check, string word){
+    if(words_check.find(word) != words_check.end()){
+        return true;
+    }
+    words_check.insert(word);
+    return false;
+}
 
 
 int main(){
-    cout<<"Hello From main!"<<std::endl;
     Slot *slot_teste;
-
-    vector<string> words;
-    words.push_back("casa");
-    words.push_back("bala");
-    words.push_back("sala");
     pair<int,int> coord_init = make_pair(0,0);
     pair<int,int> coord_end = make_pair(0,0);
-
     slot_teste = new Slot(coord_init, coord_end);
-    WordTable *table = new WordTable();
     string casa = "casa";
     string bala = "bala";
     
-    // for(int i = 0 ;i <words.size(); i++){
-    //     table->add_word(words[i]);
-    // }
+
+    cout<<"Hello From main!"<<std::endl;
+    
+    vector<string> words;
+    unordered_set<string> words_check;
+    
+
+    if(!already_exists(words_check, casa)){
+        words.push_back(casa);
+    }else{
+        cout<<"Word already exists"<<endl;
+    }
+    if(!already_exists(words_check, bala)){
+        words.push_back(bala);
+    }else{
+        cout<<"Word already exists"<<endl;
+    }
+    if(!already_exists(words_check, casa)){
+        words.push_back(casa);
+    }else{
+        cout<<"Word already exists"<<endl;
+    }   
+
+    
+    WordTable *table = new WordTable();
+    
 
     for(int i = 0 ;i <words.size(); i++){
         table->add_word_p(&words[i]);
     }
 
-    vector<string* >strings = table->get_words_p('s', 0, 4);
+    vector<string* >strings = table->get_words_p('c', 0, 4);
     
     for(int i = 0; i < strings.size(); i++){
         cout<<*strings[i]<<endl;
