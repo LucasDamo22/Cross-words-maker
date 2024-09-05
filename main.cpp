@@ -51,35 +51,35 @@ int main(){
     unordered_set<string> words_check;
     
 
-    if(!already_exists(words_check, casa)){
-        words.push_back(casa);
-    }else{
-        cout<<"Word already exists"<<endl;
-    }
-    if(!already_exists(words_check, bala)){
-        words.push_back(bala);
-    }else{
-        cout<<"Word already exists"<<endl;
-    }
-    if(!already_exists(words_check, casa)){
-        words.push_back(casa);
-    }else{
-        cout<<"Word already exists"<<endl;
-    }   
+    // if(!already_exists(words_check, casa)){
+    //     words.push_back(casa);
+    // }else{
+    //     cout<<"Word already exists"<<endl;
+    // }
+    // if(!already_exists(words_check, bala)){
+    //     words.push_back(bala);
+    // }else{
+    //     cout<<"Word already exists"<<endl;
+    // }
+    // if(!already_exists(words_check, casa)){
+    //     words.push_back(casa);
+    // }else{
+    //     cout<<"Word already exists"<<endl;
+    // }   
 
     
     WordTable *table = new WordTable();
     
 
-    for(int i = 0 ;i <words.size(); i++){
-        table->add_word_p(&words[i]);
-    }
+    // for(int i = 0 ;i <words.size(); i++){
+    //     table->add_word_p(&words[i]);
+    // }
 
-    vector<string* >strings = table->get_words_p('c', 0, 4);
+    //vector<string* >strings = table->get_words_p('c', 0, 4);
     
-    for(int i = 0; i < strings.size(); i++){
-        cout<<*strings[i]<<endl;
-    }
+    // for(int i = 0; i < strings.size(); i++){
+    //     cout<<*strings[i]<<endl;
+    // }
     
    
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -98,8 +98,10 @@ int main(){
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
     string file("testes/grid-11x11-20W-84L-37B.txt");
+    string file_words("testes/palavras_short.txt");
     
-    std::ifstream infile(file);                     
+    std::ifstream infile(file);
+    std::ifstream infile_words(file_words);                     
 
     // Vector to hold the matrix
     std::vector<std::vector<char>> matrix;
@@ -119,6 +121,32 @@ int main(){
 
     infile.close();
 
+    int k = 0;
+
+    while(std::getline(infile_words, line)){
+        line = trim_trailing_whitespace(line);
+        if(!already_exists(words_check, line)){
+            //cout<<line<<endl;
+            words.push_back(line);
+            table->add_word_p(&words[words.size()-1]);
+        }
+    }
+
+    // for(int i = 0 ;i <words.size(); i++){
+    //     table->add_word_p(&words[i]);
+    // }
+   
+
+    vector<string*>tester = table->get_words_p('7', 0, 4);
+    cout<<tester.size()<<endl;
+    cout<<*tester[0]<<endl;
+    // for(int i = 0; i < tester.size(); i++){
+    //     cout<<*tester[i]<<endl;
+    // }
+    
+
+
+   
      // Display the matrix
     // for (const auto& row : matrix) {
     //     for (char ch : row) {
