@@ -9,8 +9,9 @@
 #include <cctype>     // For std::isspace
 //ia
 
-#include "Slot.h"
+//#include "Slot.h"
 #include "Word.h"
+#include "Grid.h"
 using std::unordered_set;
 using std::cout;
 using std::endl;
@@ -50,36 +51,12 @@ int main(){
     vector<string> words;
     unordered_set<string> words_check;
     
-
-    // if(!already_exists(words_check, casa)){
-    //     words.push_back(casa);
-    // }else{
-    //     cout<<"Word already exists"<<endl;
-    // }
-    // if(!already_exists(words_check, bala)){
-    //     words.push_back(bala);
-    // }else{
-    //     cout<<"Word already exists"<<endl;
-    // }
-    // if(!already_exists(words_check, casa)){
-    //     words.push_back(casa);
-    // }else{
-    //     cout<<"Word already exists"<<endl;
-    // }   
-
-    
     WordTable *table = new WordTable();
+
+    Grid *grid = new Grid();
     
 
-    // for(int i = 0 ;i <words.size(); i++){
-    //     table->add_word_p(&words[i]);
-    // }
-
-    //vector<string* >strings = table->get_words_p('c', 0, 4);
-    
-    // for(int i = 0; i < strings.size(); i++){
-    //     cout<<*strings[i]<<endl;
-    // }
+   
     
    
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -120,6 +97,7 @@ int main(){
     }
 
     infile.close();
+    grid->create_grid(matrix);
 
     int k = 0;
 
@@ -132,21 +110,6 @@ int main(){
         }
     }
 
-    // for(int i = 0 ;i <words.size(); i++){
-    //     table->add_word_p(&words[i]);
-    // }
-   
-
-    vector<string*>tester = table->get_words_p('7', 0, 4);
-    cout<<tester.size()<<endl;
-    cout<<*tester[0]<<endl;
-    // for(int i = 0; i < tester.size(); i++){
-    //     cout<<*tester[i]<<endl;
-    // }
-    
-
-
-   
      // Display the matrix
     // for (const auto& row : matrix) {
     //     for (char ch : row) {
