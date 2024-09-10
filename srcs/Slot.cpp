@@ -1,4 +1,4 @@
-#include "Slot.h"
+#include "./include/Slot.h"
 
 Slot::Slot(){
     coord_init = make_pair(0,0);
@@ -26,12 +26,12 @@ void Slot::add_edge(Slot* edge){
 };
 
 
-vector<pair<int,int>> Slot::get_dependancies(){
-    return dependancies;
+vector<pair<int,int>> Slot::get_dependencies(){
+    return dependencies;
 };
 
-void Slot::add_dependancies(pair<int,int> dependancy){
-    dependancies.push_back(dependancy);
+void Slot::add_dependencies(pair<int,int> dependancy){
+    dependencies.push_back(dependancy);
 };
 
 string Slot::get_word(){

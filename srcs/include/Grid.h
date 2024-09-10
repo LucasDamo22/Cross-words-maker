@@ -4,9 +4,12 @@
 #include <string>
 #include <vector>
 #include "Slot.h"
+
 using std::pair;
 using std::vector;
 using std::string;
+using std::cout;
+using std::endl;
 
 class Grid{
     public:
@@ -20,6 +23,7 @@ class Grid{
         vector<Slot*> get_slots();
         void connect_slots();
         void print_grid();
+        Slot make_slot(pair<int,int> coord_init, pair<int,int> coord_end);
 
     vector<Slot> slots;
 

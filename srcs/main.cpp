@@ -44,7 +44,6 @@ int main(){
     slot_teste = new Slot(coord_init, coord_end);
     string casa = "casa";
     string bala = "bala";
-    
 
     cout<<"Hello From main!"<<std::endl;
     
@@ -109,6 +108,8 @@ int main(){
             table->add_word_p(&words[words.size()-1]);
         }
     }
+
+    grid->print_grid();
 
      // Display the matrix
     // for (const auto& row : matrix) {

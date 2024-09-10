@@ -14,10 +14,8 @@ class Slot{
         pair<int, int>        coord_init;   
         pair<int, int>        coord_end;
         vector<Slot*>         edges;
-        vector<pair<int, int>> dependancies;
+        vector<pair<int, int>> dependencies;
         
-        //vector<pair<Slot*,pair<int, int>>> dependancies
-
     public:
         Slot();
         Slot(pair<int, int> coord_init, pair<int, int> coord_end);
@@ -33,6 +31,6 @@ class Slot{
         void add_edge(Slot* edge);
         vector<Slot*> get_edges();
 
-        void add_dependancies(pair<int,int>);
-        vector<pair<int,int>> get_dependancies();
+        void add_dependencies(pair<int,int>);
+        vector<pair<int,int>> get_dependencies();
 };

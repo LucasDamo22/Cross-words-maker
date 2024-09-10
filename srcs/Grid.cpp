@@ -1,4 +1,4 @@
-#include "Grid.h"
+#include "./include/Grid.h"
 
 
 Grid::Grid(){
@@ -10,6 +10,7 @@ Grid::~Grid(){
 void Grid::add_slot(Slot slot){
     slots.push_back(slot);
 };
+
 vector<Slot*> Grid::get_slots(){
     vector<Slot*> slot_p;
     for(int i = 0; i < slots.size(); i++){
@@ -17,6 +18,13 @@ vector<Slot*> Grid::get_slots(){
     }
     return slot_p;
 };
+
+Slot Grid::make_slot(pair<int,int> coord_init, pair<int,int> coord_end){
+    Slot slot(coord_init,coord_end);
+    return slot;
+};
+
+
 void Grid::horizontal_search(vector<vector<char>> &matrix){
     int xstart = 0;
     int ystart = 0;
@@ -36,20 +44,25 @@ void Grid::horizontal_search(vector<vector<char>> &matrix){
                 if(matrix[i][j-1] == '?'){
                     dependencies.push_back(make_pair(i,j));
                 }
+                cout<<"i: "<<i<<" j: "<<j<< "char: " << matrix[i][j]<<endl;
             }else{
                 if(creating_slot || (j == matrix[i].size()-1)){
+                    cout<<"LINE SIZE: "<<matrix[i].size()-1<<endl;
+                    cout<<"ENDING "<<"i: "<<i<<" j: "<<j<< "char: " << matrix[i][j]<<endl;
                     if(xstart == i-1 && ystart == j-1){
                         creating_slot = false;
+                        cout<<"mono space nao cria slot"<<endl;
                         continue;
                     }
-                    Slot slot(make_pair(ystart,xstart),make_pair(i,j));
+                    Slot slot(make_pair(ystart,xstart),make_pair(i,j-1));
                     for(int k = 0; k < dependencies.size(); k++){
-                        slot.add_dependancies(dependencies[k]);
+                        slot.add_dependencies(dependencies[k]);
                     }
                     add_slot(slot);
                     creating_slot = false;
                     dependencies.clear();
                 }
+                cout<<"i: "<<i<<" j: "<<j<< "char: " << matrix[i][j]<<endl;
             }
         }
     }
