@@ -3,6 +3,7 @@
 #include <utility>
 #include <string>
 #include <vector>
+#include <fstream>
 #include "Slot.h"
 
 using std::pair;
@@ -24,6 +25,9 @@ class Grid{
         void connect_slots();
         void print_grid();
         Slot make_slot(pair<int,int> coord_init, pair<int,int> coord_end, vector<pair<int,int>> dependencies);
+        void print_graphviz(const std::string &filename);
+        void print_grid_edges();
+        void print_grid_edges_graphviz(const std::string &filename);
 
     vector<Slot> slots;
 

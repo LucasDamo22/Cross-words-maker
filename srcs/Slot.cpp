@@ -17,14 +17,14 @@ pair<int, int> Slot::get_coord_end(){
     return coord_end;
 };
 
-vector<Slot*>  Slot::get_edges(){
+vector<pair<Slot*, pair<int, int>>>  Slot::get_edges(){
     return edges;
 };
 
-void Slot::add_edge(Slot* edge){
+void Slot::add_edge(pair<Slot*, pair<int, int>> edge){
     edges.push_back(edge);
-};
-
+    
+}
 
 vector<pair<int,int>> Slot::get_dependencies(){
     return dependencies;

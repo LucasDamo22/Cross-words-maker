@@ -1,11 +1,6 @@
 {
     "files.associations": {
         "ostream": "cpp",
-        "iterator": "cpp",
-        "unordered_set": "cpp",
-        "string": "cpp",
-        "vector": "cpp",
-        "iostream": "cpp",
         "array": "cpp",
         "string_view": "cpp",
         "initializer_list": "cpp",

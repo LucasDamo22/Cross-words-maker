@@ -94,6 +94,10 @@ int main(){
 
     infile.close();
     grid->create_grid(matrix);
+    grid->connect_slots();
+    //grid->print_graphviz("graph.dot");
+    grid->print_grid_edges();
+    grid->print_grid_edges_graphviz("graph.dot");
 
     int k = 0;
 
@@ -106,7 +110,7 @@ int main(){
         }
     }
 
-    grid->print_grid();
+    //grid->print_grid();
 
      // Display the matrix
     // for (const auto& row : matrix) {

@@ -13,7 +13,7 @@ class Slot{
         int                   size;
         pair<int, int>        coord_init;   
         pair<int, int>        coord_end;
-        vector<Slot*>         edges;
+        vector<pair<Slot*, pair<int, int>>>         edges;
         vector<pair<int, int>> dependencies;
         
     public:
@@ -28,8 +28,8 @@ class Slot{
         
         void set_word(string word);
 
-        void add_edge(Slot* edge);
-        vector<Slot*> get_edges();
+        void add_edge(pair<Slot*, pair<int, int>> edge);
+        vector<pair<Slot*, pair<int, int>>> get_edges();
 
         void add_dependencies(pair<int,int>);
         vector<pair<int,int>> get_dependencies();
