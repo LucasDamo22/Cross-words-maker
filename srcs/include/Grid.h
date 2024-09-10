@@ -23,7 +23,7 @@ class Grid{
         vector<Slot*> get_slots();
         void connect_slots();
         void print_grid();
-        Slot make_slot(pair<int,int> coord_init, pair<int,int> coord_end);
+        Slot make_slot(pair<int,int> coord_init, pair<int,int> coord_end, vector<pair<int,int>> dependencies);
 
     vector<Slot> slots;
 

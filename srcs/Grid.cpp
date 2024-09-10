@@ -19,9 +19,14 @@ vector<Slot*> Grid::get_slots(){
     return slot_p;
 };
 
-Slot Grid::make_slot(pair<int,int> coord_init, pair<int,int> coord_end){
-    Slot slot(coord_init,coord_end);
-    return slot;
+Slot Grid::make_slot(pair<int,int> coord_init, pair<int,int> coord_end, vector<pair<int,int>> dependencies){
+    Slot new_slot(coord_init,coord_end);
+    for(int k = 0; k < dependencies.size(); k++){
+        new_slot.add_dependencies(dependencies[k]);
+    }
+
+    add_slot(new_slot);
+    return new_slot;
 };
 
 
@@ -33,36 +38,41 @@ void Grid::horizontal_search(vector<vector<char>> &matrix){
     for(int i = 0; i < matrix.size(); i++){
         for(int j = 0; j < matrix[i].size(); j++){
             if(matrix[i][j]=='?'){
-                if(!creating_slot){
-                    xstart = j;
-                    ystart = i;
+                if(!creating_slot && j != matrix[i].size()-1){
+                    // CUIDADO COM O MALVADO DO X E Y
+                    xstart = i;
+                    ystart = j;
                     creating_slot = true;
                 }
-                if(matrix[i][j+1] == '?'){
-                    dependencies.push_back(make_pair(i,j));
-                }
-                if(matrix[i][j-1] == '?'){
-                    dependencies.push_back(make_pair(i,j));
-                }
-                cout<<"i: "<<i<<" j: "<<j<< "char: " << matrix[i][j]<<endl;
-            }else{
-                if(creating_slot || (j == matrix[i].size()-1)){
-                    cout<<"LINE SIZE: "<<matrix[i].size()-1<<endl;
-                    cout<<"ENDING "<<"i: "<<i<<" j: "<<j<< "char: " << matrix[i][j]<<endl;
-                    if(xstart == i-1 && ystart == j-1){
-                        creating_slot = false;
-                        cout<<"mono space nao cria slot"<<endl;
-                        continue;
+                if(i == matrix.size()-1){                          // making sure we are not out of bounds
+                    if(matrix[i-1][j] == '?'){
+                        dependencies.push_back(make_pair(i,j));
                     }
-                    Slot slot(make_pair(ystart,xstart),make_pair(i,j-1));
-                    for(int k = 0; k < dependencies.size(); k++){
-                        slot.add_dependencies(dependencies[k]);
+                }else if(i == 0){                                  // making sure we are not out of bounds
+                    if(matrix[i+1][j] == '?'){
+                        dependencies.push_back(make_pair(i,j));
                     }
-                    add_slot(slot);
+                }else{                                             // all the other cases (inbounds)
+                    if(matrix[i+1][j] == '?' || matrix[i-1][j] == '?'){
+                        dependencies.push_back(make_pair(i,j));
+                    }
+                }
+                if(j == matrix[i].size()-1 && creating_slot){
+                    make_slot(make_pair(xstart,ystart),make_pair(i,j), dependencies);
                     creating_slot = false;
                     dependencies.clear();
                 }
-                cout<<"i: "<<i<<" j: "<<j<< "char: " << matrix[i][j]<<endl;
+            }else{
+                if(creating_slot || (j == matrix[i].size()-1)){
+                    if(xstart == i && ystart == j-1){
+                        creating_slot = false;
+                        continue;
+                    }
+                    make_slot(make_pair(xstart,ystart),make_pair(i,j-1), dependencies);
+                    creating_slot = false;
+                    dependencies.clear();
+                }
+               
             }
         }
     }
@@ -92,6 +102,10 @@ void Grid::print_grid(){
     for(int i = 0; i < slots.size(); i++){
         pair<int,int> coord_init = slots[i].get_coord_init();
         pair<int,int> coord_end = slots[i].get_coord_end();
-        std::cout<<"Slot "<<i<<": "<<coord_init.first<<","<<coord_init.second<<" "<<coord_end.first<<","<<coord_end.second<<std::endl;
+        std::cout<<"Slot "<<i<<": "<<coord_init.first<<","<<coord_init.second<<" "<<coord_end.first<<","<<coord_end.second;
+        for(int j = 0; j < slots[i].get_dependencies().size(); j++){
+            std::cout<<" "<<slots[i].get_dependencies()[j].first<<","<<slots[i].get_dependencies()[j].second;
+        }
+        std::cout<<std::endl;
     }
 };
