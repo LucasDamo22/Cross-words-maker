@@ -9,7 +9,7 @@
 #include <cctype>     // For std::isspace
 //ia
 
-#include "./include/Slot.h"
+//#include "./include/Slot.h"
 #include "./include/Word.h"
 #include "./include/Grid.h"
 using std::unordered_set;
