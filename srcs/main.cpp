@@ -9,9 +9,9 @@
 #include <cctype>     // For std::isspace
 //ia
 
-//#include "Slot.h"
-#include "Word.h"
-#include "Grid.h"
+
+#include "./include/Word.h"
+#include "./include/Grid.h"
 using std::unordered_set;
 using std::cout;
 using std::endl;
