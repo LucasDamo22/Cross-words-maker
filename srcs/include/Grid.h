@@ -5,6 +5,8 @@
 #include <vector>
 #include <fstream>
 #include "Slot.h"
+#include <unordered_set>
+#include <tuple>
 
 using std::pair;
 using std::vector;

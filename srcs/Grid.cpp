@@ -200,6 +200,15 @@ void Grid::print_grid_edges(){
         cout<<endl;
     }
 }
+struct tuple_hash {
+    template <class T1, class T2>
+    std::size_t operator() (const std::tuple<T1, T2>& tuple) const {
+        auto h1 = std::hash<T1>{}(std::get<0>(tuple));
+        auto h2 = std::hash<T2>{}(std::get<1>(tuple));
+        return h1 ^ (h2 << 1); // Combine the two hash values
+    }
+};
+
 void Grid::print_grid_edges_graphviz(const std::string &filename) {
     std::ofstream file(filename);
     if (!file.is_open()) {
@@ -208,14 +217,21 @@ void Grid::print_grid_edges_graphviz(const std::string &filename) {
     }
 
     file << "digraph G {" << std::endl;
-    file << "    node [shape=record];" << std::endl;
+    file << "    node [shape=ellipse];" << std::endl; // Change node shape to ellipse
+    file << "    rankdir=LR;" << std::endl; // Layout direction from left to right
+    file << "    nodesep=0.15;" << std::endl; // Decrease the separation between nodes
+    file << "    ranksep=0.5;" << std::endl; // Decrease the separation between ranks
+    file << "    concentrate=true;" << std::endl; // Merge parallel edges
 
     // Print nodes
     for (int i = 0; i < slots.size(); i++) {
         pair<int, int> coord_init = slots[i].get_coord_init();
         pair<int, int> coord_end = slots[i].get_coord_end();
-        file << "    slot" << i << " [label=\"{" << coord_init.first << "," << coord_init.second << " " << coord_end.first << "," << coord_end.second << "}\"];" << std::endl;
+        file << "    slot" << i << " [label=\"{" << coord_init.first << "," << coord_init.second << " | " << coord_end.first << "," << coord_end.second << "}\"];" << std::endl;
     }
+
+    // Set to keep track of printed edges
+    std::unordered_set<std::tuple<int, int>, tuple_hash> printed_edges;
 
     // Print edges
     for (int i = 0; i < slots.size(); i++) {
@@ -234,7 +250,16 @@ void Grid::print_grid_edges_graphviz(const std::string &filename) {
             }
 
             if (slotAuxIndex != -1) {
-                file << "    slot" << i << " -> slot" << slotAuxIndex << " [label=\"(" << pairAux2.first << "," << pairAux2.second << ")\"];" << std::endl;
+                // Check if the edge or its reverse has already been printed
+                auto edge = std::make_tuple(i, slotAuxIndex);
+                auto reverse_edge = std::make_tuple(slotAuxIndex, i);
+                if (printed_edges.find(reverse_edge) == printed_edges.end()) {
+                    // Customize the arrow style here
+                    file << "    slot" << i << " -> slot" << slotAuxIndex 
+                         << " [label=\"(" << pairAux2.first << "," << pairAux2.second << ")\", "
+                         << "color=\"blue\", style=\"dashed\", arrowhead=\"diamond\", arrowsize=1.5, dir=\"both\"];" << std::endl;
+                    printed_edges.insert(edge);
+                }
             }
         }
     }
