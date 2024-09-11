@@ -18,9 +18,27 @@ using std::endl;
 using std::pair;
 using std::make_pair;
 
-//ia
-// Function to trim trailing whitespace from a string
-std::string trim_trailing_whitespace(const std::string& str) {
+// ia
+//  Function to trim trailing whitespace from a string
+std::vector<std::string> readStringsFromFile(const std::string& filename) {
+    std::vector<std::string> result;
+    std::ifstream file(filename);
+
+    if (!file.is_open()) {
+        std::cerr << "Error opening file: " << filename << std::endl;
+        return result;
+    }
+
+    std::string line;
+    while (std::getline(file, line)) {
+        result.push_back(line);
+    }
+
+    file.close();
+    return result;
+}
+std::string trim_trailing_whitespace(const std::string &str)
+{
     std::string result = str;
     result.erase(std::remove_if(result.begin(), result.end(), [](unsigned char x) {
         return std::isspace(x) && x != ' ';  // Only remove newlines and carriage returns
@@ -72,7 +90,8 @@ int main(){
 
     string file("testes/grid-11x11-20W-84L-37B.txt");
     string file_words("testes/palavras_short.txt");
-    
+    vector<string> words_func =  readStringsFromFile("testes/palavras_short.txt");
+
     std::ifstream infile(file);
     std::ifstream infile_words(file_words);                     
 
@@ -101,16 +120,55 @@ int main(){
 
     int k = 0;
 
-    while(std::getline(infile_words, line)){
-        line = trim_trailing_whitespace(line);
-        if(!already_exists(words_check, line)){
-            //cout<<line<<endl;
-            words.push_back(line);
-            table->add_word_p(&words[words.size()-1]);
+    
+
+    // words.push_back("casa");
+    // words.push_back("bala");
+    // for(int i = 0; i < words.size(); i++){
+    //     if (!already_exists(words_check, words[i])){
+    //         table->add_word_p(&words[i]);
+    //     }
+    // }
+    // vector<string*> string_pointer = table->get_words_p('a', 1, 4);
+
+    // for(int i = 0; i < string_pointer.size(); i++){
+    //     cout<<*string_pointer[i]<<endl;
+    // }
+
+
+    // while (std::getline(infile_words, line))
+    // {
+    //     line = trim_trailing_whitespace(line);
+    //     if (!already_exists(words_check, line))
+    //     {
+    //         // cout<<line<<endl;
+    //         words.push_back(line);
+    //         table->add_word_p(&words[words.size() - 1]);
+    //     }
+    // }
+
+    //TESTE
+    // vector<string*> words_tablea = table->get_words_p('a', 1, 4);
+    // cout << "Size: " << words_tablea.size() << endl;
+    // cout << "Words: " << endl;
+    // for (int i = 0; i < words_tablea.size(); i++)
+    // {
+    //     cout << i << " ";
+    //     cout << *words_tablea[i] << endl;
+    // }
+
+    for(int i =0 ; i < words_func.size(); i++ ){
+        if(!already_exists(words_check, words_func[i])){
+            table->add_word_p(&words_func[i]);
         }
     }
+    vector<string*> pointers = table->get_words_p('3',1,4);
 
-    //grid->print_grid();
+    for(int i =0; i <pointers.size();i++ ){
+        cout<<*pointers[i]<<endl;
+    }
+
+    
 
      // Display the matrix
     // for (const auto& row : matrix) {
