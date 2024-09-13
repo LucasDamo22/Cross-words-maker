@@ -59,7 +59,7 @@ int main(){
     Slot *slot_teste;
     pair<int,int> coord_init = make_pair(0,0);
     pair<int,int> coord_end = make_pair(0,0);
-    slot_teste = new Slot(coord_init, coord_end);
+    slot_teste = new Slot(coord_init, coord_end, false);
     string casa = "casa";
     string bala = "bala";
 

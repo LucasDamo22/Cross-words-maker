@@ -4,9 +4,10 @@ Slot::Slot(){
     coord_init = make_pair(0,0);
     coord_end = make_pair(0,0);
 };
-Slot::Slot(pair<int, int> coord_init, pair<int, int> coord_end){
+Slot::Slot(pair<int, int> coord_init, pair<int, int> coord_end, bool vertical){
     this->coord_init = coord_init;
     this->coord_end = coord_end;
+    this->vertical = vertical;
 };
 Slot::~Slot(){};
 pair<int, int> Slot::get_coord_init(){

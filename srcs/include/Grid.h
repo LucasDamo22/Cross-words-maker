@@ -26,7 +26,7 @@ class Grid{
         vector<Slot*> get_slots();
         void connect_slots();
         void print_grid();
-        Slot make_slot(pair<int,int> coord_init, pair<int,int> coord_end, vector<pair<int,int>> dependencies);
+        Slot make_slot(pair<int,int> coord_init, pair<int,int> coord_end, vector<pair<int,int>> dependencies, bool vertical);
         void print_graphviz(const std::string &filename);
         void print_grid_edges();
         void print_grid_edges_graphviz(const std::string &filename);

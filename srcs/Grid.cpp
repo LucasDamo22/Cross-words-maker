@@ -19,8 +19,8 @@ vector<Slot*> Grid::get_slots(){
     return slot_p;
 };
 
-Slot Grid::make_slot(pair<int,int> coord_init, pair<int,int> coord_end, vector<pair<int,int>> dependencies){
-    Slot new_slot(coord_init,coord_end);
+Slot Grid::make_slot(pair<int,int> coord_init, pair<int,int> coord_end, vector<pair<int,int>> dependencies, bool vertical){
+    Slot new_slot(coord_init,coord_end, vertical);
     for(int k = 0; k < dependencies.size(); k++){
         new_slot.add_dependencies(dependencies[k]);
     }
@@ -59,7 +59,7 @@ void Grid::horizontal_search(vector<vector<char>> &matrix){
                     }
                 }
                 if(j == matrix[i].size()-1 && creating_slot){
-                    make_slot(make_pair(xstart,ystart),make_pair(i,j), dependencies);
+                    make_slot(make_pair(xstart,ystart),make_pair(i,j), dependencies, false);
                     creating_slot = false;
                 }
             }else{
@@ -68,7 +68,7 @@ void Grid::horizontal_search(vector<vector<char>> &matrix){
                         creating_slot = false;
                         continue;
                     }
-                    make_slot(make_pair(xstart,ystart),make_pair(i,j-1), dependencies);
+                    make_slot(make_pair(xstart,ystart),make_pair(i,j-1), dependencies, false);
                     creating_slot = false;
                 }
             }
@@ -105,7 +105,7 @@ void Grid::vertical_search(vector<vector<char>> &matrix) {
                     }
                 }
                 if (i == matrix.size() - 1 && creating_slot) {
-                    make_slot(make_pair(xstart, ystart), make_pair(i, j), dependencies);
+                    make_slot(make_pair(xstart, ystart), make_pair(i, j), dependencies, true);
                     creating_slot = false;
                 }
             } else {
@@ -114,7 +114,7 @@ void Grid::vertical_search(vector<vector<char>> &matrix) {
                         creating_slot = false;
                         continue;
                     }
-                    make_slot(make_pair(xstart, ystart), make_pair(i - 1, j), dependencies);
+                    make_slot(make_pair(xstart, ystart), make_pair(i - 1, j), dependencies, true);
                     creating_slot = false;
                 }
             }
@@ -158,7 +158,21 @@ void Grid::connect_slots(){
 
 
 
-
+void Grid::print_grid_edges(){
+    for(int i =0; i < slots.size(); i++){
+        pair<int,int> coord_init = slots[i].get_coord_init();
+        pair<int,int> coord_end = slots[i].get_coord_end();
+        std::cout<<"Slot "<<i<<": "<<coord_init.first<<","<<coord_init.second<<" "<<coord_end.first<<","<<coord_end.second<<"  ";;
+        //cout<<"SIZE DOQ EU QUERO"<<slots[i].get_edges().size()<<endl;
+        for(int j=0; j < slots[i].get_edges().size(); j++){
+            pair<Slot*, pair<int,int>> pairAux = slots[i].get_edges()[j];
+            Slot* slotAux = pairAux.first;
+            pair<int,int> pairAux2 = pairAux.second;
+            cout << "Edge to: (" << slotAux->get_coord_init().first<<"," <<slotAux->get_coord_init().second << ")(" <<slotAux->get_coord_end().first<<","<<slotAux->get_coord_end().second<< ") Dependency: (" << pairAux2.first <<"," << pairAux2.second<<")";
+        }
+        cout<<endl;
+    }
+}
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 //
@@ -185,21 +199,7 @@ void Grid::print_grid(){
         std::cout<<std::endl;
     }
 };
-void Grid::print_grid_edges(){
-    for(int i =0; i < slots.size(); i++){
-        pair<int,int> coord_init = slots[i].get_coord_init();
-        pair<int,int> coord_end = slots[i].get_coord_end();
-        std::cout<<"Slot "<<i<<": "<<coord_init.first<<","<<coord_init.second<<" "<<coord_end.first<<","<<coord_end.second<<"  ";;
-        //cout<<"SIZE DOQ EU QUERO"<<slots[i].get_edges().size()<<endl;
-        for(int j=0; j < slots[i].get_edges().size(); j++){
-            pair<Slot*, pair<int,int>> pairAux = slots[i].get_edges()[j];
-            Slot* slotAux = pairAux.first;
-            pair<int,int> pairAux2 = pairAux.second;
-            cout << "Edge to: (" << slotAux->get_coord_init().first<<"," <<slotAux->get_coord_init().second << ")(" <<slotAux->get_coord_end().first<<","<<slotAux->get_coord_end().second<< ") Dependency: (" << pairAux2.first <<"," << pairAux2.second<<")";
-        }
-        cout<<endl;
-    }
-}
+
 struct tuple_hash {
     template <class T1, class T2>
     std::size_t operator() (const std::tuple<T1, T2>& tuple) const {
