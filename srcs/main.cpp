@@ -89,8 +89,8 @@ int main(){
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
     string file("testes/grid-11x11-20W-84L-37B.txt");
-    string file_words("testes/palavras_short.txt");
-    vector<string> words_func =  readStringsFromFile("testes/palavras_short.txt");
+    string file_words("testes/lista_palavras.txt");
+    vector<string> words_func =  readStringsFromFile("testes/lista_palavras.txt");
 
     std::ifstream infile(file);
     std::ifstream infile_words(file_words);                     
@@ -120,63 +120,29 @@ int main(){
 
     int k = 0;
 
-    
-
-    // words.push_back("casa");
-    // words.push_back("bala");
-    // for(int i = 0; i < words.size(); i++){
-    //     if (!already_exists(words_check, words[i])){
-    //         table->add_word_p(&words[i]);
-    //     }
-    // }
-    // vector<string*> string_pointer = table->get_words_p('a', 1, 4);
-
-    // for(int i = 0; i < string_pointer.size(); i++){
-    //     cout<<*string_pointer[i]<<endl;
-    // }
-
-
-    // while (std::getline(infile_words, line))
-    // {
-    //     line = trim_trailing_whitespace(line);
-    //     if (!already_exists(words_check, line))
-    //     {
-    //         // cout<<line<<endl;
-    //         words.push_back(line);
-    //         table->add_word_p(&words[words.size() - 1]);
-    //     }
-    // }
-
-    //TESTE
-    // vector<string*> words_tablea = table->get_words_p('a', 1, 4);
-    // cout << "Size: " << words_tablea.size() << endl;
-    // cout << "Words: " << endl;
-    // for (int i = 0; i < words_tablea.size(); i++)
-    // {
-    //     cout << i << " ";
-    //     cout << *words_tablea[i] << endl;
-    // }
-
+    int count = 0;
     for(int i =0 ; i < words_func.size(); i++ ){
         if(!already_exists(words_check, words_func[i])){
             table->add_word_p(&words_func[i]);
+            count++;
         }
     }
-    vector<string*> pointers = table->get_words_p('3',1,4);
+    cout<<"========="<<endl;
+    cout<<count<<endl;
+    vector<string*> pointers = table->get_words_p('A',0,10);
+    cout<<"========="<<endl;
+    cout<<pointers.size()<<endl;
+    cout<<"========="<<endl;
+    cout<<words_func.size()<<endl;
+    cout<<"========="<<endl;
+    cout<<table->map_p.size()<<endl;
 
-    for(int i =0; i <pointers.size();i++ ){
-        cout<<*pointers[i]<<endl;
-    }
+    // for(int i =0; i <pointers.size();i++ ){
+    //     cout<<*pointers[i]<<endl;
+    // }
 
     
 
-     // Display the matrix
-    // for (const auto& row : matrix) {
-    //     for (char ch : row) {
-    //         std::cout << ch;
-    //     }
-    //     std::cout << std::endl;
-    // }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////  
 //
@@ -207,7 +173,9 @@ int main(){
     // }
 
     
-    
+    delete table;
+    delete slot_teste;
+    delete grid;
    
 }
 

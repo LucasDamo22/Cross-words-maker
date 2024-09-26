@@ -14,8 +14,9 @@ using std::string;
 
 class WordTable{
     std::unordered_map<int, vector<string>> map;
-    std::unordered_map<int, vector<string*>> map_p;
+    
     public:
+    std::unordered_map<int, vector<string*>> map_p;
     WordTable();
     ~WordTable();
     int charHash(char c, int index, int size);
