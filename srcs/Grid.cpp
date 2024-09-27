@@ -19,14 +19,16 @@ vector<Slot*> Grid::get_slots(){
     return slot_p;
 };
 
-Slot Grid::make_slot(pair<int,int> coord_init, pair<int,int> coord_end, vector<pair<int,int>> dependencies, bool vertical){
-    Slot new_slot(coord_init,coord_end, vertical);
+void Grid::make_slot(pair<int,int> coord_init, pair<int,int> coord_end, vector<pair<int,int>> dependencies, bool vertical){
+    
+    int new_id = slots.size() + 1;
+    Slot new_slot(coord_init,coord_end, vertical, new_id);
+
     for(int k = 0; k < dependencies.size(); k++){
         new_slot.add_dependencies(dependencies[k]);
     }
 
     add_slot(new_slot);
-    return new_slot;
 };
 
 
@@ -82,8 +84,8 @@ void Grid::vertical_search(vector<vector<char>> &matrix) {
     vector<pair<int, int>> dependencies;
     bool creating_slot = false;
 
-    for (int j = 0; j < matrix[0].size(); j++) { // Iterate over columns first
-        for (int i = 0; i < matrix.size(); i++) { // Then iterate over rows
+    for (int j = 0; j < matrix[0].size(); j++) {                    // Iterate over columns first
+        for (int i = 0; i < matrix.size(); i++) {                   // Then iterate over rows
             if (matrix[i][j] == '?') {
                 if (!creating_slot && i < matrix.size() - 1) {
                     dependencies.clear();
@@ -91,15 +93,15 @@ void Grid::vertical_search(vector<vector<char>> &matrix) {
                     ystart = j;
                     creating_slot = true;
                 }
-                if (j == matrix[0].size() - 1) { // making sure we are not out of bounds
+                if (j == matrix[0].size() - 1) {                    // making sure we are not out of bounds
                     if (matrix[i][j - 1] == '?') {
                         dependencies.push_back(make_pair(i, j));
                     }
-                } else if (j == 0) { // making sure we are not out of bounds
+                } else if (j == 0) {                                // making sure we are not out of bounds
                     if (matrix[i][j + 1] == '?') {
                         dependencies.push_back(make_pair(i, j));
                     }
-                } else { // all the other cases (inbounds)
+                } else {                                            // all the other cases (inbounds)
                     if (matrix[i][j + 1] == '?' || matrix[i][j - 1] == '?') {
                         dependencies.push_back(make_pair(i, j));
                     }
@@ -128,17 +130,13 @@ void Grid::create_grid(vector<vector<char>> matrix){
 };
 
 pair<int,int> equal_pairs(vector<pair<int, int>> &dep_a, vector<pair<int, int>> &dep_b){
-    //cout<<dep_a[0].first<<dep_a[0].second<<"kek"<<endl;
-    
     for (const auto &pair_i : dep_a) {
                 for (const auto &pair_j : dep_b) {
                     if (pair_i == pair_j) {
-                        //cout<<"pares enguais "<<pair_i.first<<" "<<pair_i.second<<"|"<<pair_j.first<<" "<< pair_i.second<<endl;
                         return pair_i;                       
                     }
                 }
             }
-    
     return make_pair(-1, -1);
 }
 
@@ -156,23 +154,42 @@ void Grid::connect_slots(){
     }
 }
 
-
-
 void Grid::print_grid_edges(){
     for(int i =0; i < slots.size(); i++){
         pair<int,int> coord_init = slots[i].get_coord_init();
         pair<int,int> coord_end = slots[i].get_coord_end();
-        std::cout<<"Slot "<<i<<": "<<coord_init.first<<","<<coord_init.second<<" "<<coord_end.first<<","<<coord_end.second<<"  ";;
+        std::cout<<"Slot "<<slots[i].get_id()<<": "<<coord_init.first<<","<<coord_init.second<<" "<<coord_end.first<<","<<coord_end.second<<"  ";;
         //cout<<"SIZE DOQ EU QUERO"<<slots[i].get_edges().size()<<endl;
         for(int j=0; j < slots[i].get_edges().size(); j++){
             pair<Slot*, pair<int,int>> pairAux = slots[i].get_edges()[j];
             Slot* slotAux = pairAux.first;
             pair<int,int> pairAux2 = pairAux.second;
-            cout << "Edge to: (" << slotAux->get_coord_init().first<<"," <<slotAux->get_coord_init().second << ")(" <<slotAux->get_coord_end().first<<","<<slotAux->get_coord_end().second<< ") Dependency: (" << pairAux2.first <<"," << pairAux2.second<<")";
+            //cout << "Edge to: (" << slotAux->get_coord_init().first<<"," <<slotAux->get_coord_init().second << ")(" <<slotAux->get_coord_end().first<<","<<slotAux->get_coord_end().second<< ") Dependency: (" << pairAux2.first <<"," << pairAux2.second<<")";
+            cout << "Edge to (" <<slotAux->get_id() << ")";
         }
         cout<<endl;
     }
 }
+
+
+void Grid::fill_grid(WordTable *table){
+    Slot *most_dependable = &slots[0];
+    cout << "starting biggest is = "<<most_dependable->get_qt_dependencies()<<endl;
+    for(int i = 1; i < slots.size(); i ++){
+        cout<<most_dependable->get_id()<< " X " << slots[i].get_id()<<endl;
+        if(most_dependable->get_qt_dependencies() < slots[i].get_qt_dependencies()){
+            most_dependable = &slots[i];
+            cout<<"new most = " << most_dependable->get_id()<<"with "<<most_dependable->get_qt_dependencies()<<endl;
+        }
+        if(slots[i].get_id() == 43){
+            cout<<"43 qt of dependen"<< slots[i].get_qt_dependencies()<<endl;
+        }
+    }
+    cout<<"most dependable"<<most_dependable->get_id()<<endl;
+
+
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 //
@@ -192,7 +209,7 @@ void Grid::print_grid(){
     for(int i = 0; i < slots.size(); i++){
         pair<int,int> coord_init = slots[i].get_coord_init();
         pair<int,int> coord_end = slots[i].get_coord_end();
-        std::cout<<"Slot "<<i<<": "<<coord_init.first<<","<<coord_init.second<<" "<<coord_end.first<<","<<coord_end.second;
+        std::cout<<"Slot "<<slots[i].get_id()<<": "<<coord_init.first<<","<<coord_init.second<<" "<<coord_end.first<<","<<coord_end.second;
         for(int j = 0; j < slots[i].get_dependencies().size(); j++){
             std::cout<<" "<<slots[i].get_dependencies()[j].first<<","<<slots[i].get_dependencies()[j].second;
         }

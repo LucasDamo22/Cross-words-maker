@@ -1,4 +1,4 @@
-#include "Word.h"
+#include "WordTable.h"
 
 WordTable::WordTable(){
 
