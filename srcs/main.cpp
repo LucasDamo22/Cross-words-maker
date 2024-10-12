@@ -22,8 +22,8 @@ int main(){
 
     Grid *grid = new Grid();
     
-
-    string file("testes/grid-25x25-88W-400L-225B.txt");
+    string file("/home/lucas.damo/Documents/IA/testes/grid-25x25-88W-400L-225B.txt");
+    //string file("testes/25x25.txt");
     string file_words("testes/lista_palavras.txt");
     vector<string> words_func =  readStringsFromFile("testes/lista_palavras.txt");
 
@@ -37,11 +37,13 @@ int main(){
 
     /* AI SMALL SECTION */
     while (std::getline(infile, line)) {
-        line = trim_trailing_whitespace(line);
         std::vector<char> row(line.begin(), line.end());
         matrix.push_back(row);
     }
     /* AI SMALL SECTION */
+
+    cout<< "line size " <<matrix[0].size()<<endl;
+    cout<< "column size " <<matrix.size()<<endl;
 
     infile.close();
     grid->create_grid(matrix);
