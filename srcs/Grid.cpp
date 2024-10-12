@@ -32,91 +32,121 @@ void Grid::make_slot(pair<int,int> coord_init, pair<int,int> coord_end, vector<p
 };
 
 
-void Grid::horizontal_search(vector<vector<char>> &matrix){
-    int xstart = 0;
-    int ystart = 0;
-    vector<pair<int,int>> dependencies;
-    bool creating_slot = false;
-    for(int i = 0; i < matrix.size(); i++){
-        for(int j = 0; j < matrix[i].size(); j++){
-            if(matrix[i][j]=='?'){
-                if(!creating_slot && j < matrix[i].size()-1){
-                    // CUIDADO COM O MALVADO DO X E Y
-                    dependencies.clear();
-                    xstart = i;
-                    ystart = j;
-                    creating_slot = true;
-                }
-                if(i == matrix.size()-1){                          // making sure we are not out of bounds
-                    if(matrix[i-1][j] == '?'){
-                        dependencies.push_back(make_pair(i,j));
-                    }
-                }else if(i == 0){                                  // making sure we are not out of bounds
-                    if(matrix[i+1][j] == '?'){
-                        dependencies.push_back(make_pair(i,j));
-                    }
-                }else{                                             // all the other cases (inbounds)
-                    if(matrix[i+1][j] == '?' || matrix[i-1][j] == '?'){
-                        dependencies.push_back(make_pair(i,j));
-                    }
-                }
-                if(j == matrix[i].size()-1 && creating_slot){
-                    make_slot(make_pair(xstart,ystart),make_pair(i,j), dependencies, false);
-                    creating_slot = false;
-                }
-            }else{
-                if(creating_slot || (j == matrix[i].size()-1)){
-                    if(xstart == i && ystart == j-1){
-                        creating_slot = false;
-                        continue;
-                    }
-                    make_slot(make_pair(xstart,ystart),make_pair(i,j-1), dependencies, false);
-                    creating_slot = false;
-                }
-            }
-        }
-    }
-};
+void Grid::horizontal_search_2(vector<vector<char>> &matrix){
 
-void Grid::vertical_search(vector<vector<char>> &matrix) {
-    int xstart = 0;
-    int ystart = 0;
     vector<pair<int, int>> dependencies;
     bool creating_slot = false;
+    int xstart;
+    int ystart;
 
-    for (int j = 0; j < matrix[0].size(); j++) {                    // Iterate over columns first
-        for (int i = 0; i < matrix.size(); i++) {                   // Then iterate over rows
-            if (matrix[i][j] == '?') {
-                if (!creating_slot && i < matrix.size() - 1) {
+    for(int y = 0; y < matrix.size(); y++){
+        for(int x = 0; x < matrix[y].size(); x++){
+            if(matrix[y][x] == '?'){
+                if(!creating_slot){
                     dependencies.clear();
-                    xstart = i;
-                    ystart = j;
                     creating_slot = true;
+                    xstart = x;
+                    ystart = y;
                 }
-                if (j == matrix[0].size() - 1) {                    // making sure we are not out of bounds
-                    if (matrix[i][j - 1] == '?') {
-                        dependencies.push_back(make_pair(i, j));
+                // dependence check
+                // if on the first line
+                if(0 == y){
+                    if(matrix[y+1][x] == '?'){
+                        dependencies.push_back(make_pair(y,x));
                     }
-                } else if (j == 0) {                                // making sure we are not out of bounds
-                    if (matrix[i][j + 1] == '?') {
-                        dependencies.push_back(make_pair(i, j));
+                } 
+                // if on the last line
+                else if ((matrix.size() - 1) == y){
+                    if(matrix[y-1][x] == '?'){
+                        dependencies.push_back(make_pair(y,x));
                     }
-                } else {                                            // all the other cases (inbounds)
-                    if (matrix[i][j + 1] == '?' || matrix[i][j - 1] == '?') {
-                        dependencies.push_back(make_pair(i, j));
+                // all the other lines
+                }else{
+                    if((matrix[y-1][x] == '?') || (matrix[y+1][x] == '?')){
+                        dependencies.push_back(make_pair(y,x));
                     }
                 }
-                if (i == matrix.size() - 1 && creating_slot) {
-                    make_slot(make_pair(xstart, ystart), make_pair(i, j), dependencies, true);
+                // dependence check end*/
+
+                // EOL CHECK
+                if(x == (matrix[y].size() - 1)){ // checking if we are on the last char of the line
+                    if(creating_slot){
+                        if(xstart != (x)){
+                            make_slot(make_pair(ystart, xstart), make_pair(y, x), dependencies, false);
+                        }
+                        dependencies.clear();
+                        xstart = 0;
+                        ystart = 0;
+                        creating_slot = false;
+                    }
+                }
+                // EOL CHECK END
+            } else {
+                // only one ?  doesnt form word
+                if(creating_slot){
+                    if(xstart != (x -1)){
+                        make_slot(make_pair(ystart, xstart), make_pair(y, (x-1)), dependencies, false);
+                    }
+                    dependencies.clear();
+                    xstart = 0;
+                    ystart = 0;
                     creating_slot = false;
                 }
-            } else {
-                if (creating_slot || (i == matrix.size() - 1)) {
-                    if (xstart == i - 1 && ystart == j) {
-                        creating_slot = false;
-                        continue;
+            }
+        }
+    }
+}
+
+void Grid::vertical_search_2(vector<vector<char>> &matrix){
+    vector<pair<int, int>> dependencies;
+    bool creating_slot = false;
+    int xstart;
+    int ystart;
+    
+    for(int x = 0; x < matrix[0].size(); x++){
+        for(int y = 0; y < matrix.size(); y++){
+            if(matrix[y][x]== '?'){
+                if(!creating_slot){
+                    creating_slot = true;
+                    xstart = x;
+                    ystart = y;
+                    dependencies.clear();
+                }
+                if(0 == x){
+                    if(matrix[y][x+1] == '?'){
+                        dependencies.push_back(make_pair(y, x));
                     }
-                    make_slot(make_pair(xstart, ystart), make_pair(i - 1, j), dependencies, true);
+                }
+                else if((matrix[y].size() - 1) == x){
+                    if(matrix[y][x-1] == '?'){
+                        dependencies.push_back(make_pair(y, x));
+                    }
+                }
+                else {
+                    if((matrix[y][x+1] == '?')||(matrix[y][x-1] == '?')){
+                        dependencies.push_back(make_pair(y, x));
+                    }
+                }
+
+                if( y == (matrix.size() - 1)){
+                    if(creating_slot){
+                        if(ystart != y){
+                            make_slot(make_pair(ystart, xstart), make_pair(y, x), dependencies, true);
+                        }
+                        dependencies.clear();
+                        xstart = 0;
+                        ystart = 0;
+                        creating_slot = false;
+                    }
+                }
+            } else {
+                if(creating_slot){
+                    if (ystart != (y - 1)){
+                        make_slot(make_pair(ystart, xstart), make_pair((y-1), x), dependencies, true);
+                    }
+                    dependencies.clear();
+                    xstart = 0;
+                    ystart = 0;
                     creating_slot = false;
                 }
             }
@@ -124,9 +154,12 @@ void Grid::vertical_search(vector<vector<char>> &matrix) {
     }
 };
 
+
+
+
 void Grid::create_grid(vector<vector<char>> matrix){
-   horizontal_search(matrix);
-   vertical_search(matrix);
+   horizontal_search_2(matrix);
+   vertical_search_2(matrix);
 };
 
 pair<int,int> equal_pairs(vector<pair<int, int>> &dep_a, vector<pair<int, int>> &dep_b){
@@ -174,18 +207,18 @@ void Grid::print_grid_edges(){
 
 void Grid::fill_grid(WordTable *table){
     Slot *most_dependable = &slots[0];
-    cout << "starting biggest is = "<<most_dependable->get_qt_dependencies()<<endl;
+    //cout << "starting biggest is = "<<most_dependable->get_qt_dependencies()<<endl;
     for(int i = 1; i < slots.size(); i ++){
-        cout<<most_dependable->get_id()<< " X " << slots[i].get_id()<<endl;
+      //  cout<<most_dependable->get_id()<< " X " << slots[i].get_id()<<endl;
         if(most_dependable->get_qt_dependencies() < slots[i].get_qt_dependencies()){
             most_dependable = &slots[i];
-            cout<<"new most = " << most_dependable->get_id()<<"with "<<most_dependable->get_qt_dependencies()<<endl;
+        //    cout<<"new most = " << most_dependable->get_id()<<"with "<<most_dependable->get_qt_dependencies()<<endl;
         }
         if(slots[i].get_id() == 43){
-            cout<<"43 qt of dependen"<< slots[i].get_qt_dependencies()<<endl;
+         //   cout<<"43 qt of dependen"<< slots[i].get_qt_dependencies()<<endl;
         }
     }
-    cout<<"most dependable"<<most_dependable->get_id()<<endl;
+    //cout<<"most dependable"<<most_dependable->get_id()<<endl;
 
 
 }
