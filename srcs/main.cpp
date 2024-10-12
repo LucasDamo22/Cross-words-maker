@@ -24,12 +24,10 @@ int main(){
     
     string file("testes/5x5.txt");
     string file_words("testes/lista_palavras.txt");
-    vector<string> words_func =  readStringsFromFile("testes/lista_palavras.txt");
+    vector<string> words_func =  readStringsFromFile(file_words);
 
     std::ifstream infile(file);
     std::ifstream infile_words(file_words);
-
-
 
     // Vector to hold the matrix
     std::vector<std::vector<char>> matrix;
@@ -50,6 +48,7 @@ int main(){
         return 1; // Return an error code or handle the error appropriately
     }
     /* AI SMALL SECTION */
+    
 
     infile.close();
     grid->create_grid(matrix);
@@ -66,6 +65,12 @@ int main(){
             table->add_word_p(&words_func[i]);
             count++;
         }
+    }
+    vector<string *> letter4word = table->get_words_bysize(4);
+     
+   
+    for(int i = 0; i < letter4word.size(); i++){
+        cout<<*letter4word[i]<<endl;
     }
 
     grid->fill_grid(table);
