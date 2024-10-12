@@ -23,6 +23,7 @@ class WordTable{
     int charHash_p(char *c, int index, int size);
     void add_word(string word);
     void add_word_p(string *word);
+    vector<string* > get_words_bysize(int size);
     vector<string> get_words(char c, int index, int size);
     vector<string*> get_words_p(char c, int index, int size);
 

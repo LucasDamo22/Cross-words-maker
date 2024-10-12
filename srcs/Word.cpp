@@ -29,7 +29,13 @@ int WordTable::charHash_p(char *c, int index, int size){
     return hashfinal;
 };
 
+
+vector<string *> WordTable::get_words_bysize(int size){
+    return map_p[size];
+}
+
 void WordTable::add_word(string word){
+    map[word.size()].push_back(word);
     for(int i = 0; i < word.length(); i++){
         int hash = charHash(word[i],i,word.length());
         //cout<<std::hex<<hash<<" "<< word[i]<<" "<< i <<" "<< word.length()<<endl;
@@ -38,6 +44,7 @@ void WordTable::add_word(string word){
 };
 void WordTable::add_word_p(string *word){
     string cp = *word;
+    map_p[word->length()].push_back(word);
     for(int i = 0; i < word->length(); i++){
         int hash = charHash_p(&cp[i],i,word->length());
         //cout<<std::hex<<hash<<" "<< word[i]<<" "<< i <<" "<< word.length()<<endl;
