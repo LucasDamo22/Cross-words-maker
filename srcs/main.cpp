@@ -22,22 +22,32 @@ int main(){
 
     Grid *grid = new Grid();
     
-    string file("/home/lucas.damo/Documents/IA/testes/grid-25x25-88W-400L-225B.txt");
+    string file("testes/5x5.txt");
     string file_words("testes/lista_palavras.txt");
     vector<string> words_func =  readStringsFromFile("testes/lista_palavras.txt");
 
     std::ifstream infile(file);
-    std::ifstream infile_words(file_words);                     
+    std::ifstream infile_words(file_words);
+
+
 
     // Vector to hold the matrix
     std::vector<std::vector<char>> matrix;
     std::string line;
 
-
     /* AI SMALL SECTION */
     while (std::getline(infile, line)) {
         std::vector<char> row(line.begin(), line.end());
         matrix.push_back(row);
+    }
+    if (!infile.is_open()) {
+        std::cerr << "Error: Could not open file " << file << std::endl;
+        return 1; // Return an error code or handle the error appropriately
+    }
+
+    if (!infile_words.is_open()) {
+        std::cerr << "Error: Could not open file " << file_words << std::endl;
+        return 1; // Return an error code or handle the error appropriately
     }
     /* AI SMALL SECTION */
 
@@ -46,6 +56,7 @@ int main(){
     grid->connect_slots();
     grid->print_grid_edges();
     grid->print_grid_edges_graphviz("graph.dot");
+
 
     int k = 0;
 
