@@ -22,8 +22,8 @@ class Grid{
         ~Grid();
         void add_slot(Slot slot);
         void create_grid(vector<vector<char>> matrix);
-        void horizontal_search(vector<vector<char>> &matrix);
-        void vertical_search(vector<vector<char>> &matrix);
+        void horizontal_search_2(vector<vector<char>> &matrix);
+        void vertical_search_2(vector<vector<char>> &matrix);
         vector<Slot*> get_slots();
         void connect_slots();
         void print_grid();
@@ -32,7 +32,4 @@ class Grid{
         void print_grid_edges();
         void print_grid_edges_graphviz(const std::string &filename);
         void fill_grid(WordTable *table);
-
-
-
 };
