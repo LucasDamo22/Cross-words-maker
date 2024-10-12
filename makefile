@@ -1,4 +1,4 @@
-TARGET = CROSS_WORD.bin
+TARGET = cross.bin
 
 SRCDIR = srcs
 INCLUDEDIR = $(SRCDIR)/include
