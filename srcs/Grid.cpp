@@ -102,7 +102,6 @@ void Grid::vertical_search_2(vector<vector<char>> &matrix){
     bool creating_slot = false;
     int xstart;
     int ystart;
-    
     for(int x = 0; x < matrix[0].size(); x++){
         for(int y = 0; y < matrix.size(); y++){
             if(matrix[y][x]== '?'){
@@ -207,20 +206,27 @@ void Grid::print_grid_edges(){
 
 void Grid::fill_grid(WordTable *table){
     Slot *most_dependable = &slots[0];
-    //cout << "starting biggest is = "<<most_dependable->get_qt_dependencies()<<endl;
+    unordered_set<string> used_words;
+    cout << "starting biggest is = "<<most_dependable->get_qt_dependencies()<<endl;
     for(int i = 1; i < slots.size(); i ++){
-      //  cout<<most_dependable->get_id()<< " X " << slots[i].get_id()<<endl;
         if(most_dependable->get_qt_dependencies() < slots[i].get_qt_dependencies()){
             most_dependable = &slots[i];
-        //    cout<<"new most = " << most_dependable->get_id()<<"with "<<most_dependable->get_qt_dependencies()<<endl;
-        }
-        if(slots[i].get_id() == 43){
-         //   cout<<"43 qt of dependen"<< slots[i].get_qt_dependencies()<<endl;
+            cout<<"new most = " << most_dependable->get_id()<<"with "<<most_dependable->get_qt_dependencies()<<endl;
         }
     }
-    //cout<<"most dependable"<<most_dependable->get_id()<<endl;
+    Slot *start = most_dependable;
+    vector<string *> words = table->get_words_bysize(start->get_size());
+    if(words.size() == 0){
+        std::cerr <<"There are no words this size: " << start->get_size()<<endl;
+        return;
+    }
+    start->set_word(*words[0]);
+    
 
+    cout<<"First word set: "<<start->get_word()<<endl;
+   
 
+    
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -252,13 +258,12 @@ void Grid::print_grid(){
 
 struct tuple_hash {
     template <class T1, class T2>
-    std::size_t operator() (const std::tuple<T1, T2>& tuple) const {
+    std::size_t operator() (const std::tuple<T1, T2> &tuple) const {
         auto h1 = std::hash<T1>{}(std::get<0>(tuple));
         auto h2 = std::hash<T2>{}(std::get<1>(tuple));
-        return h1 ^ (h2 << 1); // Combine the two hash values
+        return h1 ^ h2;
     }
 };
-
 void Grid::print_grid_edges_graphviz(const std::string &filename) {
     std::ofstream file(filename);
     if (!file.is_open()) {
@@ -268,13 +273,15 @@ void Grid::print_grid_edges_graphviz(const std::string &filename) {
 
     file << "digraph G {" << std::endl;
     file << "    node [shape=ellipse];" << std::endl; // Change node shape to ellipse
-    file << "    rankdir=LR;" << std::endl; // Layout direction from left to right
-    file << "    nodesep=0.15;" << std::endl; // Decrease the separation between nodes
-    file << "    ranksep=0.5;" << std::endl; // Decrease the separation between ranks
-    file << "    concentrate=true;" << std::endl; // Merge parallel edges
+    file << "    layout=circo;" << std::endl; // Use circo layout engine
+    file << "    overlap=false;" << std::endl; // Reduce node overlap
+    file << "    sep=1;" << std::endl; // Add extra space between nodes
+    file << "    splines=true;" << std::endl; // Use curved edges
 
-    // Print nodes
-    for (int i = 0; i < slots.size(); i++) {
+    int num_slots = slots.size();
+
+    // Print nodes without fixed positions
+    for (int i = 0; i < num_slots; i++) {
         pair<int, int> coord_init = slots[i].get_coord_init();
         pair<int, int> coord_end = slots[i].get_coord_end();
         file << "    slot" << i << " [label=\"{" << coord_init.first << "," << coord_init.second << " | " << coord_end.first << "," << coord_end.second << "}\"];" << std::endl;
@@ -307,7 +314,8 @@ void Grid::print_grid_edges_graphviz(const std::string &filename) {
                     // Customize the arrow style here
                     file << "    slot" << i << " -> slot" << slotAuxIndex 
                          << " [label=\"(" << pairAux2.first << "," << pairAux2.second << ")\", "
-                         << "color=\"blue\", style=\"dashed\", arrowhead=\"diamond\", arrowsize=1.5, dir=\"both\"];" << std::endl;
+                         << "color=\"blue\", style=\"solid\", arrowhead=\"diamond\", dir=\"both\", "
+                         << "minlen=3];" << std::endl;
                     printed_edges.insert(edge);
                 }
             }

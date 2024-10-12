@@ -6,6 +6,7 @@
 #include <fstream>
 #include <unordered_set>
 #include <tuple>
+#include <cmath>
 #include "Slot.h"
 #include "WordTable.h"
 
@@ -14,6 +15,7 @@ using std::vector;
 using std::string;
 using std::cout;
 using std::endl;
+using std::unordered_set;
 
 class Grid{
     public:
