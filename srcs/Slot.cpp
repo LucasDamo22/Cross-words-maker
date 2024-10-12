@@ -8,8 +8,12 @@ Slot::Slot(pair<int, int> coord_init, pair<int, int> coord_end, bool vertical, i
     this->coord_init = coord_init;
     this->coord_end  = coord_end;
     this->vertical   = vertical;
-
     this->id = id;
+    if(this->vertical){
+        this->size = (coord_end.first) - (coord_init.first);
+    } else {
+        this->size = (coord_end.second) - (coord_init.second);
+    }
 };
 Slot::~Slot(){};
 pair<int, int> Slot::get_coord_init(){
@@ -48,6 +52,11 @@ void Slot::set_word(string word){
 int Slot::get_qt_dependencies(){
     return this->dependencies.size();
 }
+
+int Slot::get_size(){
+    return this->size;
+}
+
 
 int Slot::get_id(){
     return this->id;

@@ -36,6 +36,6 @@ class Slot{
 
         void add_dependencies(pair<int,int>);
         vector<pair<int,int>> get_dependencies();
-
+        int get_size();
         int get_id();
 };
