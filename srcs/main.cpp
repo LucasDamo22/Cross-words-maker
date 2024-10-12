@@ -23,7 +23,6 @@ int main(){
     Grid *grid = new Grid();
     
     string file("/home/lucas.damo/Documents/IA/testes/grid-25x25-88W-400L-225B.txt");
-    //string file("testes/25x25.txt");
     string file_words("testes/lista_palavras.txt");
     vector<string> words_func =  readStringsFromFile("testes/lista_palavras.txt");
 
@@ -41,9 +40,6 @@ int main(){
         matrix.push_back(row);
     }
     /* AI SMALL SECTION */
-
-    cout<< "line size " <<matrix[0].size()<<endl;
-    cout<< "column size " <<matrix.size()<<endl;
 
     infile.close();
     grid->create_grid(matrix);
@@ -103,14 +99,7 @@ std::vector<std::string> readStringsFromFile(const std::string& filename) {
     file.close();
     return result;
 }
-std::string trim_trailing_whitespace(const std::string &str)
-{
-    std::string result = str;
-    result.erase(std::remove_if(result.begin(), result.end(), [](unsigned char x) {
-        return std::isspace(x) && x != ' ';  // Only remove newlines and carriage returns
-    }), result.end());
-    return result;
-}
+
 //ia
 bool already_exists(unordered_set<string> &words_check, string word){
     if(words_check.find(word) != words_check.end()){
