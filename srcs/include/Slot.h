@@ -15,7 +15,7 @@ class Slot{
         int                   size;
         pair<int, int>        coord_init;   
         pair<int, int>        coord_end;
-        vector<pair<Slot*, pair<int, int>>>         edges;
+        vector<pair<Slot*, pair<int, int>>> edges;
         vector<pair<int, int>> dependencies;
         
     public:

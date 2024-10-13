@@ -22,7 +22,7 @@ int main(){
 
     Grid *grid = new Grid();
     
-    string file("testes/5x5.txt");
+    string file("/home/lucas.damo/Documents/IA/testes/grid-11x11-20W-84L-37B.txt");
     string file_words("testes/lista_palavras.txt");
     vector<string> words_func =  readStringsFromFile(file_words);
 
@@ -66,12 +66,7 @@ int main(){
             count++;
         }
     }
-    vector<string *> letter4word = table->get_words_bysize(4);
      
-   
-    for(int i = 0; i < letter4word.size(); i++){
-        cout<<*letter4word[i]<<endl;
-    }
 
     grid->fill_grid(table);
 

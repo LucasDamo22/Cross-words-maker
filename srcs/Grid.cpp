@@ -207,6 +207,8 @@ void Grid::print_grid_edges(){
 void Grid::fill_grid(WordTable *table){
     Slot *most_dependable = &slots[0];
     unordered_set<string> used_words;
+    vector<Slot *> queue;
+    vector<Slot *> stack;
     cout << "starting biggest is = "<<most_dependable->get_qt_dependencies()<<endl;
     for(int i = 1; i < slots.size(); i ++){
         if(most_dependable->get_qt_dependencies() < slots[i].get_qt_dependencies()){
@@ -214,16 +216,42 @@ void Grid::fill_grid(WordTable *table){
             cout<<"new most = " << most_dependable->get_id()<<"with "<<most_dependable->get_qt_dependencies()<<endl;
         }
     }
-    Slot *start = most_dependable;
-    vector<string *> words = table->get_words_bysize(start->get_size());
+    Slot *current = most_dependable;
+    vector<string *> words = table->get_words_bysize(current->get_size());
     if(words.size() == 0){
-        std::cerr <<"There are no words this size: " << start->get_size()<<endl;
+        std::cerr <<"There are no words this size: " << current->get_size()<<endl;
         return;
     }
-    start->set_word(*words[0]);
+    current->set_word(*words[0]);
     
+    stack.push_back(current);
+    
+    cout<<"First word set: "<<current->get_word()<<endl;
 
-    cout<<"First word set: "<<start->get_word()<<endl;
+    bool done = false;
+    while(!done){
+        vector<pair<Slot*, pair <int, int>>> aux = current->get_edges();
+        for(int i  = 0; i < current->get_dependencies().size(); i++){
+            queue.push_back(aux[i].first);
+        }
+        for(int j = 0; j < queue.size(); j++){
+            
+        }
+        done = true;
+    }
+
+    cout <<  "current id: " << current->get_id()<<endl;
+    cout << "has edges to:"<<endl;
+    for(int i = 0; i < queue.size(); i++){
+        vector<pair<int,int>> dependencies = queue[i]->get_dependencies();
+        cout<<queue[i]->get_id()<<"shared "<<endl;
+        for(int j = 0; j< dependencies.size(); j++){
+            cout<< "("<<dependencies[j].first <<", "<< dependencies[j].second <<")" <<endl;
+        }
+        cout<<"======"<<endl;
+    }
+
+
    
 
     
