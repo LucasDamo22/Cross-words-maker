@@ -2,7 +2,7 @@
 
 
 Grid::Grid(){
-    
+    more_dependable = 0;
 };
 Grid::~Grid(){
     
@@ -173,6 +173,7 @@ pair<int,int> equal_pairs(vector<pair<int, int>> &dep_a, vector<pair<int, int>> 
 }
 
 void Grid::connect_slots(){
+    int aux = 0;
     for(int i = 0; i < slots.size(); i++){
         vector<pair<int, int>> dep_i = slots[i].get_dependencies();
         for(int j = i+1; j < slots.size(); j++){
@@ -183,6 +184,10 @@ void Grid::connect_slots(){
                 slots[j].add_edge(make_pair(&slots[i],equal));
             }
         }
+        if(slots[i].get_qt_dependencies() > aux){
+            more_dependable = i;
+            aux = slots[i].get_qt_dependencies();
+        }
     }
 }
 
@@ -190,32 +195,33 @@ void Grid::print_grid_edges(){
     for(int i =0; i < slots.size(); i++){
         pair<int,int> coord_init = slots[i].get_coord_init();
         pair<int,int> coord_end = slots[i].get_coord_end();
-        std::cout<<"Slot "<<slots[i].get_id()<<": "<<coord_init.first<<","<<coord_init.second<<" "<<coord_end.first<<","<<coord_end.second<<"  ";;
+        std::cout<<"Slot "<<slots[i].get_id()<<": ("<<coord_init.first<<","<<coord_init.second<<") - ("<<coord_end.first<<","<<coord_end.second<<")  ";
         //cout<<"SIZE DOQ EU QUERO"<<slots[i].get_edges().size()<<endl;
+        cout << "Edge to: ";
         for(int j=0; j < slots[i].get_edges().size(); j++){
             pair<Slot*, pair<int,int>> pairAux = slots[i].get_edges()[j];
             Slot* slotAux = pairAux.first;
             pair<int,int> pairAux2 = pairAux.second;
             //cout << "Edge to: (" << slotAux->get_coord_init().first<<"," <<slotAux->get_coord_init().second << ")(" <<slotAux->get_coord_end().first<<","<<slotAux->get_coord_end().second<< ") Dependency: (" << pairAux2.first <<"," << pairAux2.second<<")";
-            cout << "Edge to (" <<slotAux->get_id() << ")";
+            cout << "(" <<slotAux->get_id() << ") ";
         }
-        cout<<endl;
+        cout << endl;
     }
 }
 
 
 void Grid::fill_grid(WordTable *table){
-    Slot *most_dependable = &slots[0];
+    Slot *most_dependable = &slots[more_dependable];
     unordered_set<string> used_words;
     vector<Slot *> queue;
     vector<Slot *> stack;
-    cout << "starting biggest is = "<<most_dependable->get_qt_dependencies()<<endl;
-    for(int i = 1; i < slots.size(); i ++){
-        if(most_dependable->get_qt_dependencies() < slots[i].get_qt_dependencies()){
-            most_dependable = &slots[i];
-            cout<<"new most = " << most_dependable->get_id()<<"with "<<most_dependable->get_qt_dependencies()<<endl;
-        }
-    }
+    cout << "starting biggest is = "<<most_dependable->get_id()<<endl;
+    // for(int i = 1; i < slots.size(); i ++){
+    //     if(most_dependable->get_qt_dependencies() < slots[i].get_qt_dependencies()){
+    //         most_dependable = &slots[i];
+    //         cout<<"new most = " << most_dependable->get_id()<<"with "<<most_dependable->get_qt_dependencies()<<endl;
+    //     }
+    // }
     Slot *current = most_dependable;
     vector<string *> words = table->get_words_bysize(current->get_size());
     if(words.size() == 0){
@@ -244,9 +250,9 @@ void Grid::fill_grid(WordTable *table){
     cout << "has edges to:"<<endl;
     for(int i = 0; i < queue.size(); i++){
         vector<pair<int,int>> dependencies = queue[i]->get_dependencies();
-        cout<<queue[i]->get_id()<<"shared "<<endl;
+        cout<<queue[i]->get_id()<<" shared "<<endl;
         for(int j = 0; j< dependencies.size(); j++){
-            cout<< "("<<dependencies[j].first <<", "<< dependencies[j].second <<")" <<endl;
+            cout<< "("<<dependencies[j].first <<","<< dependencies[j].second <<")" <<endl;
         }
         cout<<"======"<<endl;
     }
@@ -386,4 +392,8 @@ void Grid::print_graphviz(const std::string &filename) {
     file << "}" << std::endl;
     file.close();
     std::cout << "Graphviz file " << filename << " generated successfully." << std::endl;
+}
+
+int Grid::get_most_dependable(){
+    return more_dependable;
 }

@@ -20,6 +20,7 @@ using std::unordered_set;
 class Grid{
     public:
         vector<Slot> slots;
+        int more_dependable;
         Grid();
         ~Grid();
         void add_slot(Slot slot);
@@ -34,4 +35,5 @@ class Grid{
         void print_grid_edges();
         void print_grid_edges_graphviz(const std::string &filename);
         void fill_grid(WordTable *table);
+        int get_most_dependable();
 };

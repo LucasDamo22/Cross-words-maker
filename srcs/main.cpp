@@ -22,7 +22,7 @@ int main(){
 
     Grid *grid = new Grid();
     
-    string file("/home/lucas.damo/Documents/IA/testes/grid-11x11-20W-84L-37B.txt");
+    string file("./testes/grid-11x11-20W-84L-37B.txt");
     string file_words("testes/lista_palavras.txt");
     vector<string> words_func =  readStringsFromFile(file_words);
 
@@ -68,8 +68,10 @@ int main(){
     }
      
 
+
     grid->fill_grid(table);
 
+    //std::cout << "Most dependable slot: " << grid->get_most_dependable() << std::endl;
 
     delete table;
     delete grid;
