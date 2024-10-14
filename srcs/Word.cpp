@@ -63,7 +63,7 @@ vector<string> WordTable::get_words(char c, int index, int size){
 vector<string* > WordTable::get_words_p(char c, int index, int size){
     int hash = charHash(c,index,size);
     if(map_p[hash].size() == 0){
-        cout<<"No words found"<<endl;
+        cout<<"No words found with char: "<< c << " index "<< index << " size "<<size <<endl;
     }
     return map_p[hash];
 };

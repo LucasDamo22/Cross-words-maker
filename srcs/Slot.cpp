@@ -9,6 +9,7 @@ Slot::Slot(pair<int, int> coord_init, pair<int, int> coord_end, bool vertical, i
     this->coord_end  = coord_end;
     this->vertical   = vertical;
     this->id = id;
+    this->visit = false;
     if(this->vertical){
         this->size = (coord_end.first) - (coord_init.first) + 1;
     } else {
@@ -86,4 +87,13 @@ char Slot::get_common_char(Slot *slot){
         aux = word_aux[this->coord_init.first - coord_init.first];
     }
     return aux;
+}
+void Slot::set_visited(bool visit){
+    this->visit = visit;
+}
+bool Slot::visited(){
+    return this->visit;
+}
+bool Slot::is_vertical(){
+    return this->vertical;
 }

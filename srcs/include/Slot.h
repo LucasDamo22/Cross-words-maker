@@ -3,15 +3,19 @@
 #include <utility>
 #include <string>
 #include <vector>
+#include <unordered_set>
 
+using std::unordered_set;
 using std::pair;
 using std::vector;
 using std::make_pair;
 using std::string;
 class Slot{
+        unordered_set<string> used_words;
         string                word;
         int                   id;
         bool                  vertical;
+        bool                  visit;
         int                   size;
         pair<int, int>        coord_init;   
         pair<int, int>        coord_end;
@@ -40,4 +44,8 @@ class Slot{
         int get_id();
         int get_common_position(Slot *slot);
         char get_common_char(Slot *slot);
+        bool is_vertical();
+        void set_visited(bool visit);
+        bool visited();
+  
 };
