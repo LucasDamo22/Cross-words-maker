@@ -48,6 +48,7 @@ class Slot{
         void set_visited(bool visit);
         bool visited();
         bool has_word(string word);
+        void clear_used();
         void insert_word(string word);
   
 };

@@ -327,7 +327,7 @@ bool Grid::fill_grid_start(WordTable *table, vector<vector<char>> *matrix){
     
     print_words();
 
-    for(int i = 0; i < 17; i++){
+    for(int i = 0; i < slots.size(); i++){
         pair<int,int> coord_init = slots[i].get_coord_init();
         pair<int,int> coord_end = slots[i].get_coord_end();
         for(int j = 0; j < slots[i].get_word().size(); j++){
@@ -459,10 +459,12 @@ bool Grid::fill_grid_r(WordTable *table, Slot *current){
                 for(int j = 0; j <edges.size(); j++){
                     edges[j].first->set_visited(false);
                     edges[j].first->set_word("");
+                    edges[j].first->clear_used();
                 }
                 i = 0;
                 current->set_visited(false);
                 current->set_word("");
+
                 return false;
             }
         }
@@ -474,6 +476,14 @@ bool Grid::fill_grid_r(WordTable *table, Slot *current){
 
 }
 
+string* Grid::find_string_ref(string str){
+     for (const auto& word_ptr : used_words) {
+        if (*word_ptr == str) {
+            return word_ptr;
+        }
+    }
+    return nullptr;
+}
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 //

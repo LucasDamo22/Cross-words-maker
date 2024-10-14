@@ -43,6 +43,7 @@ class Grid{
         bool fill_grid_start(WordTable *table, vector<vector<char>> *matrix);
         void print_words();
         string* find_word(vector<string*> words, vector<pair<char, int>> cells, Slot *current);
+        string* find_string_ref(string str);
     
 
 };

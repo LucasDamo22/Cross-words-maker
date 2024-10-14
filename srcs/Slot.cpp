@@ -108,3 +108,7 @@ bool Slot::has_word(string word){
 void Slot::insert_word(string word){
     used_words.insert(word);
 }
+
+void Slot::clear_used(){
+    used_words.clear();
+}
