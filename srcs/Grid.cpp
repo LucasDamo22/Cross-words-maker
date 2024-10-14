@@ -317,10 +317,12 @@ bool Grid::fill_grid_start(WordTable *table, vector<vector<char>> *matrix){
     bool done = false;
     while(!done){
         if(!fill_grid_r(table, current)){
-
             current->set_visited(false);
+
+        }else{
+            done = true;
         }
-        done = true;
+        
     }
     
     print_words();
@@ -348,7 +350,7 @@ string* Grid::find_word(vector<string*> words, vector<pair<char, int>> cells, Sl
                 return words[i];
             }
         }
-        cout << "sem cells e sem mais words" << endl;
+        //cout << "sem cells e sem mais words" << endl;
         return nullptr;
     }
 
@@ -366,7 +368,7 @@ string* Grid::find_word(vector<string*> words, vector<pair<char, int>> cells, Sl
             }
         }
     }
-    cout<<"nao achou nenhuma compativel;"<<endl;
+    //cout<<"nao achou nenhuma compativel;"<<endl;
     return nullptr;
 }
 
@@ -381,11 +383,12 @@ bool Grid::fill_grid_r(WordTable *table, Slot *current){
     //cout<< "slot id " <<current->get_id() <<endl;
     //cout<<current->get_word()<<endl;
     string hold;
+    //std::cin >>hold;
     cout << "SLOT ATUAL: " << current->get_id() << " (" << current->get_coord_init().first << "," << current->get_coord_init().second << ") (" << current->get_coord_end().first << "," << current->get_coord_end().second << ")" << endl;
-    std::cin >>hold;
+    vector<string*> words = table->get_words_bysize(current->get_size());
     if(current->get_word() == ""){
         //achar uma word, que satisfaça a restrição de current pq nao temos word em current
-        vector<string*> words = table->get_words_bysize(current->get_size());
+        
         for(int i = 0; i < this->used_words.size(); i++){
             words.erase(std::remove(words.begin(), words.end(), this->used_words[i]), words.end());
         }
@@ -396,16 +399,16 @@ bool Grid::fill_grid_r(WordTable *table, Slot *current){
                 index_current = edges[i].second.first - current->get_coord_init().first;
                 //index_edge    = edges[i].second.second - edges[i].first->get_coord_init().first;
                 index_edge = edges[i].first->get_common_position(current);
-                cout << "index_current: " << index_current << " index_edge: " << index_edge << endl;
+                //cout << "index_current: " << index_current << " index_edge: " << index_edge << endl;
             } else {
                 index_current = edges[i].second.second - current->get_coord_init().second;
                 //index_edge    = edges[i].second.second - edges[i].first->get_coord_init().second;
                 index_edge = edges[i].first->get_common_position(current);
-                cout << "index_current: " << index_current << " index_edge: " << index_edge << endl;
+                //cout << "index_current: " << index_current << " index_edge: " << index_edge << endl;
             }
             if(edges[i].first->get_word() != ""){
                 checks.push_back(make_pair(char(edges[i].first->get_word().at(index_edge)), index_current));
-                cout << "check: " << char(edges[i].first->get_word().at(index_edge)) << " index: " << index_edge << endl;
+                //cout << "check: " << char(edges[i].first->get_word().at(index_edge)) << " index: " << index_edge << endl;
             }
         }
         /*essa função acha uma palavra que satisfaz as dependcias*/
@@ -413,7 +416,7 @@ bool Grid::fill_grid_r(WordTable *table, Slot *current){
         /*se for null eh pq nao tem palavra que caiba, essa parte da solução morreu*/
         if(word == nullptr){
             cout<<"sem palavra"<<endl;
-            cout<<"slot atual = "<<  current->get_id()<<endl;
+            //cout<<"slot atual = "<<  current->get_id()<<endl;
             for(int z = 0; z< edges.size();z++){
                 edges[z].first->set_visited(false); /*zerando os filhos pq se deu ruim aqui, os de baixo vai mudar*/
             }
@@ -440,6 +443,9 @@ bool Grid::fill_grid_r(WordTable *table, Slot *current){
                     cout<<"dependencias falharam"<<endl;
                     current->set_word("");
                     current->set_visited(false);
+                    for(int j = 0; j <edges.size(); j++){
+                        edges[j].first->set_visited(false);
+                    }
                     return false;
                 }
             }
@@ -449,8 +455,13 @@ bool Grid::fill_grid_r(WordTable *table, Slot *current){
     for(int i = 0; i < edges.size(); i ++){
         if(!edges[i].first->visited()){
             if(fill_grid_r(table, edges[i].first) == false){
-                cout<<"falhou a recursão"<<endl;
-                edges[i].first->set_visited(false);
+                //cout<<"falhou a recursão"<<endl;
+                for(int j = 0; j <edges.size(); j++){
+                    edges[j].first->set_visited(false);
+                    edges[j].first->set_word("");
+                }
+                i = 0;
+                current->set_visited(false);
                 current->set_word("");
                 return false;
             }
