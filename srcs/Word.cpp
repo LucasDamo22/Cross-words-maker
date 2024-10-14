@@ -67,3 +67,11 @@ vector<string* > WordTable::get_words_p(char c, int index, int size){
     }
     return map_p[hash];
 };
+
+bool WordTable::exist_word_to_this_slot(char c, int index, int size){
+    int hash = charHash(c,index,size);
+    if(map_p[hash].size() == 0){
+        return false;
+    }
+    return true;
+};

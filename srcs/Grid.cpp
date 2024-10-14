@@ -216,12 +216,6 @@ void Grid::fill_grid(WordTable *table){
     vector<Slot *> queue;
     vector<Slot *> stack;
     cout << "starting biggest is = "<<most_dependable->get_id()<<endl;
-    // for(int i = 1; i < slots.size(); i ++){
-    //     if(most_dependable->get_qt_dependencies() < slots[i].get_qt_dependencies()){
-    //         most_dependable = &slots[i];
-    //         cout<<"new most = " << most_dependable->get_id()<<"with "<<most_dependable->get_qt_dependencies()<<endl;
-    //     }
-    // }
     Slot *current = most_dependable;
     vector<string *> words = table->get_words_bysize(current->get_size());
     if(words.size() == 0){
@@ -232,30 +226,67 @@ void Grid::fill_grid(WordTable *table){
     
     stack.push_back(current);
     
-    cout<<"First word set: "<<current->get_word()<<endl;
+    cout<<"First word set: "<<current->get_word()<< " Words size: "<<words.size()<<endl;
 
     bool done = false;
+    bool exist = true;
+
+    for(int i = 0; i < current->get_edges().size(); i++){
+            Slot *edge = current->get_edges()[i].first;
+            if(edge->get_word().empty()){
+                queue.push_back(edge);
+            }
+        }
+
+    cout << "Queue size: " << queue.size() << endl;
+
     while(!done){
-        vector<pair<Slot*, pair <int, int>>> aux = current->get_edges();
+        if(words.size() == 0){
+            cout<<"No words left"<<endl;
+            return;
+        }
         for(int i  = 0; i < current->get_dependencies().size(); i++){
-            queue.push_back(aux[i].first);
+          int position = queue[i]->get_common_position(current);
+          char char_position = queue[i]->get_common_char(current);
+          cout << "Slot: " << queue[i]->get_id() << " Size: " << queue[i]->get_size() << " Position: " << position << " Char: " << char_position << endl;
+            if(!table->exist_word_to_this_slot(char_position, position, queue[i]->get_size())){
+                exist = false;
+                //break;
+            } 
         }
-        for(int j = 0; j < queue.size(); j++){
-            
+        if(!exist){
+            cout << "Word: " << current->get_word() << " is not valid for this slot" << endl;
+            words.erase(words.begin());
+            current->set_word(*words[0]);
+            cout << "New word set: " << current->get_word() << " Words size: " << words.size() << endl;
+            exist = true;
+            cout << endl;
+        } else {
+            cout << "Word: " << current->get_word() << " is valid for this slot" << endl;
+           done = true; 
         }
-        done = true;
+      // done = true;
     }
 
-    cout <<  "current id: " << current->get_id()<<endl;
-    cout << "has edges to:"<<endl;
     for(int i = 0; i < queue.size(); i++){
-        vector<pair<int,int>> dependencies = queue[i]->get_dependencies();
-        cout<<queue[i]->get_id()<<" shared "<<endl;
-        for(int j = 0; j< dependencies.size(); j++){
-            cout<< "("<<dependencies[j].first <<","<< dependencies[j].second <<")" <<endl;
+        Slot *current = queue[i];
+        for(int j = 0; j < current->get_edges().size(); j++){
+            Slot *edge = current->get_edges()[j].first;
+            if(edge->get_word().empty()){
+                queue.push_back(edge);
+            }
         }
-        cout<<"======"<<endl;
     }
+    // cout <<  "current id: " << current->get_id()<<endl;
+    // cout << "has edges to:"<<endl;
+    // for(int i = 0; i < queue.size(); i++){
+    //     vector<pair<int,int>> dependencies = queue[i]->get_dependencies();
+    //     cout<<queue[i]->get_id()<<" shared "<<endl;
+    //     for(int j = 0; j< dependencies.size(); j++){
+    //         cout<< "("<<dependencies[j].first <<","<< dependencies[j].second <<")" <<endl;
+    //     }
+    //     cout<<"======"<<endl;
+    // }
 
 
    

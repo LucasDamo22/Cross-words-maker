@@ -10,9 +10,9 @@ Slot::Slot(pair<int, int> coord_init, pair<int, int> coord_end, bool vertical, i
     this->vertical   = vertical;
     this->id = id;
     if(this->vertical){
-        this->size = (coord_end.first) - (coord_init.first);
+        this->size = (coord_end.first) - (coord_init.first) + 1;
     } else {
-        this->size = (coord_end.second) - (coord_init.second);
+        this->size = (coord_end.second) - (coord_init.second) + 1;
     }
 };
 Slot::~Slot(){};
@@ -60,4 +60,30 @@ int Slot::get_size(){
 
 int Slot::get_id(){
     return this->id;
+}
+
+int Slot::get_common_position(Slot *slot){
+    string word_aux = slot->get_word();
+    pair<int,int> coord_init = slot->get_coord_init();
+    pair<int,int> coord_end = slot->get_coord_end();
+    int aux;
+    if(this->vertical){
+        aux = coord_init.first - this->coord_init.first;
+    } else {
+        aux = coord_init.second - this->coord_init.second;
+    }
+    return aux;
+}
+
+char Slot::get_common_char(Slot *slot){
+    string word_aux = slot->get_word();
+    pair<int,int> coord_init = slot->get_coord_init();
+    pair<int,int> coord_end = slot->get_coord_end();
+    char aux;
+    if(this->vertical){
+        aux = word_aux[this->coord_init.second - coord_init.second];
+    } else {
+        aux = word_aux[this->coord_init.first - coord_init.first];
+    }
+    return aux;
 }

@@ -38,4 +38,6 @@ class Slot{
         vector<pair<int,int>> get_dependencies();
         int get_size();
         int get_id();
+        int get_common_position(Slot *slot);
+        char get_common_char(Slot *slot);
 };
