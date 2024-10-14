@@ -39,6 +39,7 @@ class Grid{
         void print_grid_edges_graphviz(const std::string &filename);
         void fill_grid(WordTable *table);
         bool fill_grid_r(WordTable *table, Slot *current);
+        bool fill_grid_r_2(WordTable *table, Slot *current, vector<Slot*> stack);
         int get_most_dependable();
         bool fill_grid_start(WordTable *table, vector<vector<char>> *matrix);
         void print_words();
