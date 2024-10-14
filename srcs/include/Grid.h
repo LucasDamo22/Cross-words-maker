@@ -22,7 +22,7 @@ class Grid{
     public:
         
         vector<Slot> slots;
-        unordered_set<string> used_words;
+        vector<string*> used_words;
         int more_dependable;
         Grid();
         ~Grid();
@@ -40,9 +40,9 @@ class Grid{
         void fill_grid(WordTable *table);
         bool fill_grid_r(WordTable *table, Slot *current);
         int get_most_dependable();
-        bool fill_grid_start(WordTable *table);
+        bool fill_grid_start(WordTable *table, vector<vector<char>> *matrix);
         void print_words();
-        string* find_word(vector<string*> words, vector<pair<char, int>> cells);
+        string* find_word(vector<string*> words, vector<pair<char, int>> cells, Slot *current);
     
 
 };

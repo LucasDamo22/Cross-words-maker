@@ -47,5 +47,7 @@ class Slot{
         bool is_vertical();
         void set_visited(bool visit);
         bool visited();
+        bool has_word(string word);
+        void insert_word(string word);
   
 };

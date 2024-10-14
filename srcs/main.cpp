@@ -69,7 +69,14 @@ int main(){
      
 
 
-    grid->fill_grid_start(table);
+    grid->fill_grid_start(table, &matrix);
+
+    for(int i = 0; i < matrix.size(); i++){
+        for(int j = 0; j < matrix[i].size(); j++){
+            cout<<matrix[i][j];
+        }
+        cout<<endl;
+    }
 
     //std::cout << "Most dependable slot: " << grid->get_most_dependable() << std::endl;
 

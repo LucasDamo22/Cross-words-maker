@@ -97,3 +97,14 @@ bool Slot::visited(){
 bool Slot::is_vertical(){
     return this->vertical;
 }
+
+bool Slot::has_word(string word){
+    if(used_words.find(word) == used_words.end()){
+        return false;
+    }
+    return true;
+}
+
+void Slot::insert_word(string word){
+    used_words.insert(word);
+}
