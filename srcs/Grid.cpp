@@ -268,15 +268,6 @@ void Grid::fill_grid(WordTable *table){
       // done = true;
     }
 
-    for(int i = 0; i < queue.size(); i++){
-        Slot *current = queue[i];
-        for(int j = 0; j < current->get_edges().size(); j++){
-            Slot *edge = current->get_edges()[j].first;
-            if(edge->get_word().empty()){
-                queue.push_back(edge);
-            }
-        }
-    }
     // cout <<  "current id: " << current->get_id()<<endl;
     // cout << "has edges to:"<<endl;
     // for(int i = 0; i < queue.size(); i++){
