@@ -6,11 +6,12 @@
 #include <fstream>
 #include <unordered_set>
 #include <tuple>
-#include <cmath>
+#include <algorithm>
 #include "Slot.h"
 #include "WordTable.h"
 
 using std::pair;
+using std::find;
 using std::vector;
 using std::string;
 using std::cout;
@@ -19,7 +20,9 @@ using std::unordered_set;
 
 class Grid{
     public:
+        
         vector<Slot> slots;
+        vector<string*> used_words;
         int more_dependable;
         Grid();
         ~Grid();
@@ -35,5 +38,13 @@ class Grid{
         void print_grid_edges();
         void print_grid_edges_graphviz(const std::string &filename);
         void fill_grid(WordTable *table);
+        bool fill_grid_r(WordTable *table, Slot *current);
+        bool fill_grid_r_2(WordTable *table, Slot *current, vector<Slot*> stack);
         int get_most_dependable();
+        bool fill_grid_start(WordTable *table, vector<vector<char>> *matrix);
+        void print_words();
+        string* find_word(vector<string*> words, vector<pair<char, int>> cells, Slot *current);
+        string* find_string_ref(string str);
+    
+
 };
