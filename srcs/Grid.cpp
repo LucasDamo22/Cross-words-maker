@@ -316,7 +316,7 @@ bool Grid::fill_grid_start(WordTable *table, vector<vector<char>> *matrix){
     int i = 0;
     bool done = false;
     while(!done){
-        if(!fill_grid_r_2(table, current, stack)){
+        if(!fill_grid_r(table, current)){
             current->set_visited(false);
 
         }else{
