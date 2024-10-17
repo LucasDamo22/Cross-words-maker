@@ -8,7 +8,12 @@
 
 
 
-int main(){
+int main(int argc, char* argv[]){
+
+    if (argc < 2) {
+        std::cerr << "Usage: " << argv[0] << " <input_file>" << std::endl;
+        return 1;
+    }
 
     pair<int,int> coord_init = make_pair(0,0);
     pair<int,int> coord_end = make_pair(0,0);
@@ -22,7 +27,7 @@ int main(){
 
     Grid *grid = new Grid();
     
-    string file("./testes/grid-11x11-20W-84L-37B.txt");
+    string file(argv[1]);
     string file_words("testes/lista_palavras.txt");
     vector<string> words_func =  readStringsFromFile(file_words);
 

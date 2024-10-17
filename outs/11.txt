@@ -1,0 +1,1569 @@
+Hello From main!
+Slot 1: (0,0) - (0,5)  Edge to: (11) (13) 
+Slot 2: (0,7) - (0,10)  Edge to: (17) (19) 
+Slot 3: (2,0) - (2,3)  Edge to: (11) (13) 
+Slot 4: (2,5) - (2,10)  Edge to: (16) (17) (19) 
+Slot 5: (4,1) - (4,7)  Edge to: (13) (15) (16) 
+Slot 6: (6,3) - (6,9)  Edge to: (15) (16) (18) 
+Slot 7: (8,0) - (8,5)  Edge to: (12) (14) (15) 
+Slot 8: (8,7) - (8,10)  Edge to: (18) (20) 
+Slot 9: (10,0) - (10,3)  Edge to: (12) (14) 
+Slot 10: (10,5) - (10,10)  Edge to: (18) (20) 
+Slot 11: (0,0) - (3,0)  Edge to: (1) (3) 
+Slot 12: (5,0) - (10,0)  Edge to: (7) (9) 
+Slot 13: (0,2) - (5,2)  Edge to: (1) (3) (5) 
+Slot 14: (7,2) - (10,2)  Edge to: (7) (9) 
+Slot 15: (3,4) - (9,4)  Edge to: (5) (6) (7) 
+Slot 16: (1,6) - (7,6)  Edge to: (4) (5) (6) 
+Slot 17: (0,8) - (3,8)  Edge to: (2) (4) 
+Slot 18: (5,8) - (10,8)  Edge to: (6) (8) (10) 
+Slot 19: (0,10) - (5,10)  Edge to: (2) (4) 
+Slot 20: (7,10) - (10,10)  Edge to: (8) (10) 
+Graphviz file graph.dot generated successfully.
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 4 (2,5) (2,10)
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :125243
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 16 (1,6) (7,6)
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :125243
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :2255887
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 5 (4,1) (4,7)
+sem palavra
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 4 (2,5) (2,10)
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 16 (1,6) (7,6)
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 5 (4,1) (4,7)
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 13 (0,2) (5,2)
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 1 (0,0) (0,5)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 11 (0,0) (3,0)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 3 (2,0) (2,3)
+deu certo a word
+deu certo a word
+deu certo a word
+deu certo a word
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 15 (3,4) (9,4)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AVARICE
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 6 (6,3) (6,9)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :BRILLIG
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AVARICE
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 18 (5,8) (10,8)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :BRILLIG
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AVARICE
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :AIRWAY
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 8 (8,7) (8,10)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :BRILLIG
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :OWEN
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AVARICE
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :AIRWAY
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 20 (7,10) (10,10)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :BRILLIG
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :OWEN
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AVARICE
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :AIRWAY
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AND1
+===================
+SLOT ATUAL: 10 (10,5) (10,10)
+sem palavra
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 4 (2,5) (2,10)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :328509
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 16 (1,6) (7,6)
+sem palavra
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 4 (2,5) (2,10)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :390000
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 16 (1,6) (7,6)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :390000
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :K9CORPS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 5 (4,1) (4,7)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :390000
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :K9CORPS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 13 (0,2) (5,2)
+deu certo a word
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :390000
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :K9CORPS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 15 (3,4) (9,4)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :390000
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :K9CORPS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 6 (6,3) (6,9)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :390000
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :K9CORPS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 18 (5,8) (10,8)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :390000
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :K9CORPS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 8 (8,7) (8,10)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :390000
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :K9CORPS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+SLOT ATUAL: 20 (7,10) (10,10)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :390000
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :K9CORPS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 10 (10,5) (10,10)
+deu certo a word
+deu certo a word
+deu certo a word
+deu certo a word
+deu certo a word
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :390000
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :K9CORPS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 7 (8,0) (8,5)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :390000
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :K9CORPS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 12 (5,0) (10,0)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :390000
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :K9CORPS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 9 (10,0) (10,3)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :390000
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :K9CORPS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 14 (7,2) (10,2)
+deu certo a word
+deu certo a word
+deu certo a word
+deu certo a word
+deu certo a word
+deu certo a word
+deu certo a word
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :390000
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :K9CORPS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 17 (0,8) (3,8)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :390000
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :K9CORPS
+ID DO SLOT 17 word :7305
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 2 (0,7) (0,10)
+sem palavra
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 4 (2,5) (2,10)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :403403
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 16 (1,6) (7,6)
+sem palavra
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 4 (2,5) (2,10)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :418402
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 16 (1,6) (7,6)
+sem palavra
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 4 (2,5) (2,10)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :822649
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 16 (1,6) (7,6)
+sem palavra
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 4 (2,5) (2,10)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :998001
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 16 (1,6) (7,6)
+sem palavra
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 4 (2,5) (2,10)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :ACEDIT
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 16 (1,6) (7,6)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :ACEDIT
+ID DO SLOT 5 word :ADVISOR
+ID DO SLOT 6 word :ELOPERS
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :SCROOPS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 5 (4,1) (4,7)
+dependencias falharam
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 4 (2,5) (2,10)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :ADDEND
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 16 (1,6) (7,6)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :ADDEND
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :ADELINE
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 5 (4,1) (4,7)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :ADDEND
+ID DO SLOT 5 word :ADDIBLE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ACIDDC
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :AIMLESS
+ID DO SLOT 16 word :ADELINE
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 13 (0,2) (5,2)
+dependencias falharam
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 4 (2,5) (2,10)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :ADRATE
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 16 (1,6) (7,6)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :ADRATE
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :ADHERED
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 5 (4,1) (4,7)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :ADRATE
+ID DO SLOT 5 word :ADMIRER
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :ADHERED
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 13 (0,2) (5,2)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :ADRATE
+ID DO SLOT 5 word :ADMIRER
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ABIRDS
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :ADHERED
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 1 (0,0) (0,5)
+deu certo a word
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :ADRATE
+ID DO SLOT 5 word :ADMIRER
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :ABIRDS
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :ADHERED
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 3 (2,0) (2,3)
+dependencias falharam
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 4 (2,5) (2,10)
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :AEIIEO
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 16 (1,6) (7,6)
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :AEIIEO
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :BEACONS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 5 (4,1) (4,7)
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :AEIIEO
+ID DO SLOT 5 word :ADSPACE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :BEACONS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 13 (0,2) (5,2)
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :AEIIEO
+ID DO SLOT 5 word :ADSPACE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :AGENDA
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :BEACONS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 1 (0,0) (0,5)
+ID DO SLOT 1 word :ALANIS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :AEIIEO
+ID DO SLOT 5 word :ADSPACE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :AGENDA
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :BEACONS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 11 (0,0) (3,0)
+ID DO SLOT 1 word :ALANIS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :AEIIEO
+ID DO SLOT 5 word :ADSPACE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :AGENDA
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :BEACONS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 3 (2,0) (2,3)
+deu certo a word
+deu certo a word
+deu certo a word
+deu certo a word
+ID DO SLOT 1 word :ALANIS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BSED
+ID DO SLOT 4 word :AEIIEO
+ID DO SLOT 5 word :ADSPACE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :AGENDA
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :BEACONS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 15 (3,4) (9,4)
+ID DO SLOT 1 word :ALANIS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BSED
+ID DO SLOT 4 word :AEIIEO
+ID DO SLOT 5 word :ADSPACE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :AGENDA
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :APPEASE
+ID DO SLOT 16 word :BEACONS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 6 (6,3) (6,9)
+deu certo a word
+deu certo a word
+deu certo a word
+deu certo a word
+ID DO SLOT 1 word :ALANIS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BSED
+ID DO SLOT 4 word :AEIIEO
+ID DO SLOT 5 word :ADSPACE
+ID DO SLOT 6 word :BEANERY
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :AGENDA
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :APPEASE
+ID DO SLOT 16 word :BEACONS
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 17 (0,8) (3,8)
+ID DO SLOT 1 word :ALANIS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BSED
+ID DO SLOT 4 word :AEIIEO
+ID DO SLOT 5 word :ADSPACE
+ID DO SLOT 6 word :BEANERY
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :AGENDA
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :APPEASE
+ID DO SLOT 16 word :BEACONS
+ID DO SLOT 17 word :AMID
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 2 (0,7) (0,10)
+ID DO SLOT 1 word :ALANIS
+ID DO SLOT 2 word :BACK
+ID DO SLOT 3 word :BSED
+ID DO SLOT 4 word :AEIIEO
+ID DO SLOT 5 word :ADSPACE
+ID DO SLOT 6 word :BEANERY
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :AGENDA
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :APPEASE
+ID DO SLOT 16 word :BEACONS
+ID DO SLOT 17 word :AMID
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AKON
+===================
+SLOT ATUAL: 19 (0,10) (5,10)
+deu certo a word
+deu certo a word
+deu certo a word
+deu certo a word
+ID DO SLOT 1 word :ALANIS
+ID DO SLOT 2 word :BACK
+ID DO SLOT 3 word :BSED
+ID DO SLOT 4 word :AEIIEO
+ID DO SLOT 5 word :ADSPACE
+ID DO SLOT 6 word :BEANERY
+ID DO SLOT 7 word :ALOOSE
+ID DO SLOT 8 word :AHOK
+ID DO SLOT 9 word :SADE
+ID DO SLOT 10 word :CITRON
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :ADDAMS
+ID DO SLOT 13 word :AGENDA
+ID DO SLOT 14 word :HOLD
+ID DO SLOT 15 word :APPEASE
+ID DO SLOT 16 word :BEACONS
+ID DO SLOT 17 word :AMID
+ID DO SLOT 18 word :ARCHER
+ID DO SLOT 19 word :KNOLLS
+ID DO SLOT 20 word :AKON
+===================
+ALANIS.BACK
+B.G...B.M.N
+BSED.AEIIEO
+A.N.A.A.D.L
+.ADSPACE..L
+A.A.P.O.A.S
+D..BEANERY.
+D.H.A.S.C.A
+ALOOSE.AHOK
+M.L.E...E.O
+SADE.CITRON
