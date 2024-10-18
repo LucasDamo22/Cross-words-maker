@@ -7,7 +7,7 @@
 #include <unordered_set>
 #include <tuple>
 #include <algorithm>
-#include "Slot.h"
+//#include "Slot.h"
 #include "WordTable.h"
 
 using std::pair;
@@ -24,6 +24,8 @@ class Grid{
         vector<Slot> slots;
         vector<string*> used_words;
         int more_dependable;
+        
+        
         Grid();
         ~Grid();
         void add_slot(Slot slot);

@@ -50,5 +50,6 @@ class Slot{
         bool has_word(string word);
         void clear_used();
         void insert_word(string word);
+        int get_used_words_size();
   
 };

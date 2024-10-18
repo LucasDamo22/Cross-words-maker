@@ -316,7 +316,7 @@ bool Grid::fill_grid_start(WordTable *table, vector<vector<char>> *matrix){
     int i = 0;
     bool done = false;
     while(!done){
-        if(!fill_grid_r(table, current)){
+        if(!fill_grid_r_2(table, current, stack)){
             current->set_visited(false);
 
         }else{
@@ -356,6 +356,8 @@ string* Grid::find_word(vector<string*> words, vector<pair<char, int>> cells, Sl
         return nullptr;
     }
 
+    cout<<"used words in fnd word"<< current->get_used_words_size()<<endl;
+
     for (int i = 0; i < words.size(); i++) {
         if (current->has_word(*words[i])) {
             continue; // Skip already used words
@@ -385,38 +387,39 @@ bool Grid::fill_grid_r_2(WordTable *table, Slot *current, vector<Slot*> stack){
 
     cout << "SLOT ATUAL: " << current->get_id() << " (" << current->get_coord_init().first << "," << current->get_coord_init().second << ") (" << current->get_coord_end().first << "," << current->get_coord_end().second << ")" << endl;
     print_words();
-    std::cin >> hold;
+    //std::cin >> hold;
     for(int i = 0; i < this->used_words.size(); i++){
         words.erase(std::remove(words.begin(), words.end(), this->used_words[i]), words.end());
     }
-
     /*achando os chars de dependencia e seus indices*/
     for(int i = 0; i < edges.size(); i++){
         if(current->is_vertical()){
                 index_current = edges[i].second.first - current->get_coord_init().first;
-            } else {
+        } else {
                 index_current = edges[i].second.second - current->get_coord_init().second;
-            }
+        }
             index_edge = edges[i].first->get_common_position(current);
             if(edges[i].first->get_word() != ""){
                 checks.push_back(make_pair(char(edges[i].first->get_word().at(index_edge)), index_current));
             }
     }
-
     stack.push_back(current);
-     if(current->get_word() == ""){
-        word = find_word(words, checks, current);
-            if(word == nullptr){
-                cout << "nao encontrou palavra aqui"<<endl;
-                return false;
-            }
-     }
     
-    
-    //if(current->get_word() == ""){
+    if(current->get_word() == ""){
         bool done = false;
         
         while(!done){
+            for(int i = 0; i < edges.size(); i++){
+        if(current->is_vertical()){
+                index_current = edges[i].second.first - current->get_coord_init().first;
+        } else {
+                index_current = edges[i].second.second - current->get_coord_init().second;
+        }
+            index_edge = edges[i].first->get_common_position(current);
+            if(edges[i].first->get_word() != ""){
+                checks.push_back(make_pair(char(edges[i].first->get_word().at(index_edge)), index_current));
+            }
+    }
             word = find_word(words, checks, current);
             if(word == nullptr){
                 cout << "nao encontrou palavra nao aqui"<<endl;
@@ -426,13 +429,21 @@ bool Grid::fill_grid_r_2(WordTable *table, Slot *current, vector<Slot*> stack){
             bool break_loop = true;
             for(int i  = 0; i < edges.size(); i ++){
                 if(!fill_grid_r_2(table, edges[i].first, stack)){
+                    if((find(stack.begin(), stack.end(), edges[i].first) !=stack.end())){
+                        continue;
+                        }
                     for(int j = 0; j < i; j++){
                         /*nao remove palavras ja colocadas anteriormente*/
                         if(!(find(stack.begin(), stack.end(), edges[j].first) !=stack.end())){
                             edges[j].first->clear_used();
                             edges[j].first->set_word("");
+
                         }
                     }
+                    cout << "size antigo: " << current->get_used_words_size() << endl;
+                    table->delete_word_dependencies(*current, checks);
+                    cout << "size novo: " << current->get_used_words_size() << endl;
+                    current->set_word("");
                     break_loop = false;
                     break;
                 }
@@ -441,7 +452,7 @@ bool Grid::fill_grid_r_2(WordTable *table, Slot *current, vector<Slot*> stack){
                 done = true;
             }
         }
-    //}
+    }
     return true;
 }
 
@@ -450,7 +461,7 @@ bool Grid::fill_grid_r_2(WordTable *table, Slot *current, vector<Slot*> stack){
 bool Grid::fill_grid_r(WordTable *table, Slot *current){
     vector<pair<Slot*, pair<int,int>>> edges = current->get_edges();
     vector<pair<char, int>> checks;    
-    print_words();
+    //print_words();
     int index_current;
     int index_edge;
     //cout<< "slot id " <<current->get_id() <<endl;

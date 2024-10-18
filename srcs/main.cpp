@@ -9,6 +9,7 @@
 
 
 int main(int argc, char* argv[]){
+    
 
     if (argc < 2) {
         std::cerr << "Usage: " << argv[0] << " <input_file>" << std::endl;
@@ -73,8 +74,9 @@ int main(int argc, char* argv[]){
     }
      
 
-
+    auto start = std::chrono::high_resolution_clock::now();
     grid->fill_grid_start(table, &matrix);
+    auto end = std::chrono::high_resolution_clock::now();
 
     for(int i = 0; i < matrix.size(); i++){
         for(int j = 0; j < matrix[i].size(); j++){
@@ -84,6 +86,9 @@ int main(int argc, char* argv[]){
     }
 
     //std::cout << "Most dependable slot: " << grid->get_most_dependable() << std::endl;
+    std::chrono::duration<double> duration = end - start;
+    std::cout << "Tempo de execução: " << duration.count() << " segundos" << std::endl;
+
 
     delete table;
     delete grid;

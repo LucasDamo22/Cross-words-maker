@@ -99,16 +99,20 @@ bool Slot::is_vertical(){
 }
 
 bool Slot::has_word(string word){
-    if(used_words.find(word) == used_words.end()){
+    if(this->used_words.find(word) == this->used_words.end()){
         return false;
     }
     return true;
 }
 
 void Slot::insert_word(string word){
-    used_words.insert(word);
+    this->used_words.insert(word);
 }
 
 void Slot::clear_used(){
-    used_words.clear();
+    this->used_words.clear();
+}
+
+int Slot::get_used_words_size(){
+    return this->used_words.size();
 }
