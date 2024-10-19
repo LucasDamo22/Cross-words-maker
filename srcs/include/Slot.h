@@ -11,12 +11,12 @@ using std::vector;
 using std::make_pair;
 using std::string;
 class Slot{
-        unordered_set<string> used_words;
+        unordered_set<int>    banned_hashes;
         string                word;
         int                   id;
         bool                  vertical;
-        bool                  visit;
         int                   size;
+        bool                  visited_;
         pair<int, int>        coord_init;   
         pair<int, int>        coord_end;
         vector<pair<Slot*, pair<int, int>>> edges;
@@ -45,11 +45,9 @@ class Slot{
         int get_common_position(Slot *slot);
         char get_common_char(Slot *slot);
         bool is_vertical();
-        void set_visited(bool visit);
+        void ban_hash(int hash);
+        bool check_bans(int hash);
         bool visited();
-        bool has_word(string word);
-        void clear_used();
-        void insert_word(string word);
-        int get_used_words_size();
+        void set_visited(bool visit);
   
 };

@@ -7,15 +7,16 @@ SOURCE = $(wildcard $(SRCDIR)/*.cpp)
 HEADERS = $(wildcard $(INCLUDEDIR)/*.h)
 
 CC = g++
-CFLAGS = -g
+CFLAGS =  -Wall -Wno-sign-compare -Wno-comment
+CFLAGS_DEBUG =  -g
 
 all: $(TARGET)
 
 $(TARGET): $(SOURCE) $(HEADERS)
-	$(CC) -o $(TARGET) $(SOURCE) -I$(INCLUDEDIR)
+	$(CC) $(CFLAGS) -o $(TARGET) $(SOURCE) -I$(INCLUDEDIR)
 
 debug: $(SOURCE) $(HEADERS)
-	$(CC) $(CFLAGS) -o $(TARGET) $(SOURCE) -I$(INCLUDEDIR)
+	$(CC) $(CFLAGS) $(CFLAGS_DEBUG) -o $(TARGET) $(SOURCE) -I$(INCLUDEDIR)
 
 clean:
 	rm *.bin

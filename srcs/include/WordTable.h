@@ -6,7 +6,7 @@
 #include <cstdint>
 #include <unordered_map>
 #include <algorithm>
-#include <Slot.h>
+#include "Slot.h"
 using std::cout;
 using std::endl;
 using std::pair;
@@ -25,10 +25,8 @@ class WordTable{
     int charHash_p(char *c, int index, int size);
     void add_word(string word);
     void add_word_p(string *word);
+    int get_list_size(int hash);
     vector<string* > get_words_bysize(int size);
     vector<string> get_words(char c, int index, int size);
     vector<string*> get_words_p(char c, int index, int size);
-    bool exist_word_to_this_slot(char c, int index, int size);
-    void delete_word_dependencies(Slot &slot, vector<pair<char, int>> checks);
-
 };

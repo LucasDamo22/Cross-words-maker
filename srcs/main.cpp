@@ -1,13 +1,5 @@
 #include "./include/main.h"
 
-
-
-
-// ia
-//  Function to trim trailing whitespace from a string
-
-
-
 int main(int argc, char* argv[]){
     
 
@@ -15,9 +7,6 @@ int main(int argc, char* argv[]){
         std::cerr << "Usage: " << argv[0] << " <input_file>" << std::endl;
         return 1;
     }
-
-    pair<int,int> coord_init = make_pair(0,0);
-    pair<int,int> coord_end = make_pair(0,0);
 
     cout<<"Hello From main!"<<std::endl;
     
@@ -63,8 +52,6 @@ int main(int argc, char* argv[]){
     grid->print_grid_edges_graphviz("graph.dot");
 
 
-    int k = 0;
-
     int count = 0;
     for(int i =0 ; i < words_func.size(); i++ ){
         if(!already_exists(words_check, words_func[i])){
@@ -78,17 +65,34 @@ int main(int argc, char* argv[]){
     grid->fill_grid_start(table, &matrix);
     auto end = std::chrono::high_resolution_clock::now();
 
-    for(int i = 0; i < matrix.size(); i++){
-        for(int j = 0; j < matrix[i].size(); j++){
-            cout<<matrix[i][j];
+    string filename  = "matrix.txt";
+    std::ofstream outFile(filename);
+    if (!outFile.is_open()) {
+        std::cerr << "Error: Could not open file " << filename << std::endl;
+    }
+    std::chrono::duration<double> duration = end - start;
+    outFile << "Tempo de execução: " << duration.count() << " segundos" << std::endl;
+
+
+    for (int i = 0; i < matrix.size(); i++) {
+        for (int j = 0; j < matrix[i].size(); j++) {
+            outFile << matrix[i][j];
         }
-        cout<<endl;
+        outFile << std::endl;
     }
 
-    //std::cout << "Most dependable slot: " << grid->get_most_dependable() << std::endl;
-    std::chrono::duration<double> duration = end - start;
-    std::cout << "Tempo de execução: " << duration.count() << " segundos" << std::endl;
+    outFile.close();
+    
+    for (int i = 0; i < matrix.size(); i++) {
+        for (int j = 0; j < matrix[i].size(); j++) {
+            cout << matrix[i][j];
+        }
+        cout << std::endl;
+    }
+    //std::cout << "Matrix written to file " << filename << " successfully." << std::endl;
 
+    //std::cout << "Most dependable slot: " << grid->get_most_dependable() << std::endl;
+   
 
     delete table;
     delete grid;

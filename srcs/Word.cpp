@@ -65,30 +65,14 @@ vector<string> WordTable::get_words(char c, int index, int size){
 vector<string* > WordTable::get_words_p(char c, int index, int size){
     int hash = charHash(c,index,size);
     if(map_p[hash].size() == 0){
-        cout<<"No words found with char: "<< c << " index "<< index << " size "<<size <<endl;
+        //cout<<"No words found with char: "<< c << " index "<< index << " size "<<size <<endl;
     }
     return map_p[hash];
 };
 
-
-
-bool WordTable::exist_word_to_this_slot(char c, int index, int size){
-    int hash = charHash(c,index,size);
-    if(map_p[hash].size() == 0){
-        return false;
-    }
-    return true;
-};
-
-void WordTable::delete_word_dependencies(Slot &slot, vector<pair<char, int>> checks){
-    for(int i = 0; i < checks.size(); i++){
-        cout<< "checks size"<<checks.size()<<endl;
-        int hash = charHash(checks[i].first, checks[i].second, slot.get_size());
-        vector <string*> aux = map_p[hash];
-        cout << "tamanho do aux: " << aux.size() << endl;
-        for(int j = 0; j < aux.size(); j++){
-            slot.insert_word(*aux[i]);
-        }
-        cout << "used words size: " << slot.get_used_words_size() << endl;
-    }
+int WordTable::get_list_size(int hash){
+    return map_p[hash].size();
 }
+
+
+

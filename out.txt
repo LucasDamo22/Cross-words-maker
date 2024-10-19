@@ -1,0 +1,761 @@
+Hello From main!
+Slot 1: (0,0) - (0,5)  Edge to: (11) (13) 
+Slot 2: (0,7) - (0,10)  Edge to: (17) (19) 
+Slot 3: (2,0) - (2,3)  Edge to: (11) (13) 
+Slot 4: (2,5) - (2,10)  Edge to: (16) (17) (19) 
+Slot 5: (4,1) - (4,7)  Edge to: (13) (15) (16) 
+Slot 6: (6,3) - (6,9)  Edge to: (15) (16) (18) 
+Slot 7: (8,0) - (8,5)  Edge to: (12) (14) (15) 
+Slot 8: (8,7) - (8,10)  Edge to: (18) (20) 
+Slot 9: (10,0) - (10,3)  Edge to: (12) (14) 
+Slot 10: (10,5) - (10,10)  Edge to: (18) (20) 
+Slot 11: (0,0) - (3,0)  Edge to: (1) (3) 
+Slot 12: (5,0) - (10,0)  Edge to: (7) (9) 
+Slot 13: (0,2) - (5,2)  Edge to: (1) (3) (5) 
+Slot 14: (7,2) - (10,2)  Edge to: (7) (9) 
+Slot 15: (3,4) - (9,4)  Edge to: (5) (6) (7) 
+Slot 16: (1,6) - (7,6)  Edge to: (4) (5) (6) 
+Slot 17: (0,8) - (3,8)  Edge to: (2) (4) 
+Slot 18: (5,8) - (10,8)  Edge to: (6) (8) (10) 
+Slot 19: (0,10) - (5,10)  Edge to: (2) (4) 
+Slot 20: (7,10) - (10,10)  Edge to: (8) (10) 
+Graphviz file graph.dot generated successfully.
+SLOT ATUAL: 4 (2,5) (2,10)
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+nao tinha checks
+SLOT ATUAL: 16 (1,6) (7,6)
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :125243
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+getting list of hash:32010007
+new smallest list hash 2 1 7
+SLOT ATUAL: 5 (4,1) (4,7)
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :125243
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :2255887
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+getting list of hash:35050007
+new smallest list hash 5 5 7
+No words found with char: 5 index 5 size 7
+nao conseguiu escolher palavra em choose_word
+failed for the first word
+ word failed tryin again
+getting list of hash:32010007
+new smallest list hash 2 1 7
+palavra já no grid
+nao conseguiu escolher palavra em choose_word
+falhou nas 5 tentativas
+ word failed tryin again
+nao tinha checks
+palavra já no grid
+SLOT ATUAL: 16 (1,6) (7,6)
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+getting list of hash:35010007
+new smallest list hash 5 1 7
+SLOT ATUAL: 5 (4,1) (4,7)
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+getting list of hash:42050007
+new smallest list hash B 5 7
+SLOT ATUAL: 13 (0,2) (5,2)
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+getting list of hash:41040006
+new smallest list hash A 4 6
+SLOT ATUAL: 1 (0,0) (0,5)
+ID DO SLOT 1 word :
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+getting list of hash:41020006
+new smallest list hash A 2 6
+SLOT ATUAL: 11 (0,0) (3,0)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+getting list of hash:41000004
+new smallest list hash A 0 4
+SLOT ATUAL: 3 (2,0) (2,3)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+getting list of hash:42000004
+new smallest list hash B 0 4
+getting list of hash:49020004
+falhou word BACK
+finished slot3
+finished slot11
+finished slot1
+finished slot13
+SLOT ATUAL: 15 (3,4) (9,4)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+getting list of hash:56010007
+new smallest list hash V 1 7
+SLOT ATUAL: 6 (6,3) (6,9)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AVARICE
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+getting list of hash:52010007
+new smallest list hash R 1 7
+getting list of hash:4c030007
+falhou word ARAPAHO
+falhou word ARCHIVE
+falhou word ARCSINE
+falhou word AREAMAN
+falhou word AREARUG
+falhou word ARETHEY
+falhou word ARGUSES
+falhou word ARIANNA
+falhou word ARIGATO
+falhou word ARMANTO
+falhou word ARMENIA
+falhou word ARMISEN
+falhou word ARMREST
+falhou word AROUSES
+falhou word ARRIVED
+falhou word ARRIVER
+falhou word ARSENAL
+falhou word ARTEMIS
+falhou word ARTICLE
+falhou word ARTISTE
+falhou word ARTISTS
+falhou word BREASTS
+SLOT ATUAL: 18 (5,8) (10,8)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :BRILLIG
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AVARICE
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+getting list of hash:49010006
+new smallest list hash I 1 6
+SLOT ATUAL: 8 (8,7) (8,10)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :BRILLIG
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AVARICE
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :AIRWAY
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+getting list of hash:57010004
+new smallest list hash W 1 4
+SLOT ATUAL: 20 (7,10) (10,10)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :BRILLIG
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :OWEN
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AVARICE
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :AIRWAY
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :
+===================
+getting list of hash:4e010004
+new smallest list hash N 1 4
+SLOT ATUAL: 10 (10,5) (10,10)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :BRILLIG
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :OWEN
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AVARICE
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :AIRWAY
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :AND1
+===================
+getting list of hash:59030006
+new smallest list hash Y 3 6
+getting list of hash:31050006
+falhou word ANDYET
+falhou word ARGYLE
+falhou word BOWYER
+falhou word CLOYED
+falhou word ELAYNE
+falhou word ENZYME
+falhou word ETHYLS
+falhou word FLOYDS
+falhou word NOTYET
+falhou word OBEYED
+falhou word OKAYED
+falhou word PLAYER
+falhou word POLYPS
+falhou word SATYRS
+falhou word SAWYER
+falhou word SAYYES
+falhou word SEEYOU
+falhou word SWAYED
+falhou word FLAYED
+falhou word LARYNX
+falhou word PRAYED
+falhou word SLAYER
+falhou word THEYLL
+falhou word BERYLS
+falhou word BRAYED
+falhou word CANYON
+falhou word EDWYNN
+falhou word LAWYER
+falhou word PAPYRI
+falhou word PINYIN
+falhou word PREYED
+falhou word STAYED
+falhou word STAYON
+falhou word CRAYON
+falhou word ISAYNO
+falhou word PLAYED
+falhou word ISAYSO
+falhou word LIBYAN
+falhou word PRAYTO
+falhou word SUEYOU
+falhou word EASYAS
+falhou word PRAYER
+falhou word THEYRE
+falhou word UNDYED
+falhou word DENYIT
+falhou word EASYGO
+falhou word INSYNC
+falhou word SPAYED
+falhou word SWAYZE
+falhou word WHYYOU
+falhou word BBEYES
+falhou word OXEYES
+falhou word STAYAT
+falhou word PLAYON
+falhou word SANYOS
+falhou word SPHYNX
+falhou word PONYUP
+falhou word BANYAN
+falhou word QUAYLE
+falhou word OOCYTE
+falhou word YESYES
+falhou word BOOYAH
+falhou word COPYME
+falhou word DREYER
+falhou word EASYON
+falhou word EFFYOU
+falhou word EGOYAN
+falhou word FRAYED
+falhou word GQTYPE
+falhou word GRAYER
+falhou word GREYER
+falhou word HEYYOU
+falhou word KENYAN
+falhou word LADYDI
+falhou word LLOYDS
+falhou word MCLYTE
+falhou word NGUYEN
+falhou word PLAYJY
+falhou word PLAYME
+falhou word REDYED
+falhou word SEXYMF
+falhou word SEZYOU
+falhou word SHAYNE
+falhou word SPAYER
+falhou word WHOYOU
+falhou word YESYOU
+falhou word SWAYER
+falhou word DWAYNE
+falhou word TANYAS
+falhou word HOLYSA
+falhou word MRHYDE
+falhou word OBEYME
+falhou word SPRYER
+falhou word THAYER
+falhou word TKRYAN
+falhou word STAYUP
+falhou word SUZYQS
+falhou word TIDYUP
+falhou word CORYMB
+falhou word DLAYER
+falhou word METYOU
+falhou word ANDYOF
+falhou word BUSYAS
+falhou word RUNYON
+falhou word JEKYLL
+falhou word RETYPE
+falhou word TROYES
+falhou word BDEYED
+falhou word REDYES
+falhou word SPRYLY
+falhou word SYZYGY
+falhou word SLAYED
+falhou word DOBYNS
+falhou word GRAYED
+falhou word ODWYER
+falhou word MARYAM
+falhou word OBEYER
+falhou word PLAYTO
+falhou word COZYUP
+falhou word IRTYSH
+falhou word LADYFY
+falhou word AREYOU
+falhou word BUOYED
+falhou word SIBYLS
+falhou word VINYLS
+falhou word MAGYAR
+falhou word ONLYIF
+falhou word WARYOF
+falhou word OHMYYY
+falhou word STAYIN
+falhou word RELYON
+falhou word BRAYER
+falhou word DURYEA
+falhou word DARYLS
+falhou word BREYER
+falhou word ALKYLS
+falhou word GOTYOU
+falhou word CLAYEY
+falhou word PLAYIT
+falhou word ELAYER
+falhou word ALLYOU
+falhou word BUOYUP
+falhou word NEWYOU
+falhou word GREYED
+falhou word ITSYOU
+falhou word MYTYPE
+falhou word NOTYOU
+falhou word OBGYNS
+falhou word STAYTO
+falhou word AHAYES
+falhou word GODYES
+falhou word IMAYBE
+falhou word TROYER
+falhou word GOBYME
+falhou word OHMYNO
+falhou word UNSYNC
+falhou word OOHYES
+falhou word ARGYLL
+falhou word GETYOU
+falhou word LYNYRD
+falhou word GRAYLY
+falhou word PLAYAT
+falhou word XRAYED
+falhou word CANYOU
+falhou word WHYYES
+falhou word OKBYME
+falhou word BUNYAN
+falhou word DIDYOU
+falhou word MINYAN
+falhou word THEYVE
+falhou word PREYON
+falhou word YEHYEH
+falhou word FORYOU
+falhou word FLAYER
+falhou word PLAYUP
+falhou word AJOYTO
+falhou word YIKYAK
+falhou word PZVYOP
+falhou word INTYPE
+falhou word PREYER
+falhou word STAYER
+falhou word ADAYIN
+falhou word PLAYAS
+falhou word TONYAS
+falhou word ALKYDS
+falhou word ENCYST
+falhou word OXEYED
+falhou word YUMYUM
+falhou word AJAYER
+falhou word FTMYER
+falhou word LADYOF
+falhou word MERYLS
+falhou word GENYER
+falhou word OHMYMY
+falhou word OMGYES
+falhou word SUNYAT
+falhou word ADAYTO
+falhou word GRAYCO
+falhou word MARYJO
+falhou word ECTYPE
+falhou word YAKYAK
+falhou word GETYER
+falhou word MARYII
+falhou word MYMYMY
+falhou word PRLYTE
+falhou word PLAYIN
+falhou word ALLYLS
+falhou word DREYSE
+falhou word AMOYAN
+falhou word COTYPE
+falhou word AROYNT
+falhou word TAIYAL
+falhou word PHRYNE
+falhou word SPEYER
+falhou word KABYLE
+falhou word GREYLY
+falhou word ELAYEA
+falhou word EURYON
+falhou word TRAYED
+falhou word TAOYIN
+falhou word BANYAI
+falhou word STEYNE
+falhou word BORYLA
+falhou word TROYAT
+falhou word TOTYPE
+falhou word AWAYIN
+falhou word REBYRD
+falhou word AHOYED
+falhou word PINYON
+falhou word SAYYID
+falhou word UNEYED
+falhou word ASSYRS
+falhou word BURYME
+falhou word WHEYEY
+falhou word PLAYBY
+falhou word DIDYDO
+falhou word EASYTO
+falhou word GERYON
+falhou word LLOYDC
+falhou word REMYDE
+falhou word TEVYES
+falhou word 2LAYER
+falhou word KOLYMA
+falhou word MANYTO
+falhou word NOEYES
+falhou word STRYPE
+falhou word THUYAS
+falhou word BARYTA
+falhou word DRAYED
+falhou word NATYAS
+falhou word OBEYIS
+falhou word AWAYON
+falhou word BURYIT
+falhou word GOBYES
+falhou word LILYOF
+falhou word ONEYOU
+falhou word WEMYSS
+falhou word OKAYTO
+falhou word CHRYSO
+falhou word TIRYNS
+falhou word LADYIN
+falhou word EATYOU
+falhou word HEXYNE
+falhou word PLAYIS
+falhou word EASYST
+falhou word HOLYAS
+falhou word PAPYRO
+falhou word STAYME
+falhou word ANMYON
+falhou word HOWYOU
+falhou word TROYNY
+falhou word SATYRI
+falhou word ADAYAT
+falhou word AWAYNE
+falhou word CHEYNE
+falhou word KENYON
+falhou word AFLYAS
+falhou word ANCYLO
+falhou word BIDYOU
+falhou word DAVYCT
+falhou word ZAWYTY
+falhou word ASKYOU
+falhou word BARYON
+falhou word ETHYNE
+falhou word ASSYRO
+falhou word CNUYRC
+falhou word GNIYAS
+falhou word PLAYCR
+falhou word PRAYDO
+falhou word GARYIN
+falhou word TOMYUM
+falhou word NADYAS
+falhou word SONYTV
+falhou word OWEYOU
+falhou word PRAYIN
+falhou word MYEYES
+falhou word BABYIM
+falhou word LADYOH
+falhou word FAIYUM
+falhou word EBAYER
+falhou word PRAYON
+falhou word RAMYUN
+falhou word YANYAN
+falhou word GROYNE
+falhou word NOTYPE
+falhou word ENDYMA
+falhou word OSTYAK
+falhou word ALKYNE
+falhou word BABYOM
+falhou word ANDYON
+nao conseguiu escolher palavra em choose_word
+failed for the first word
+ word failed tryin again
+getting list of hash:4e010004
+new smallest list hash N 1 4
+palavra já no grid
+SLOT ATUAL: 10 (10,5) (10,10)
+ID DO SLOT 1 word :ALAMOS
+ID DO SLOT 2 word :
+ID DO SLOT 3 word :BAIT
+ID DO SLOT 4 word :158719
+ID DO SLOT 5 word :BADVIBE
+ID DO SLOT 6 word :BRILLIG
+ID DO SLOT 7 word :
+ID DO SLOT 8 word :OWEN
+ID DO SLOT 9 word :
+ID DO SLOT 10 word :
+ID DO SLOT 11 word :ABBA
+ID DO SLOT 12 word :
+ID DO SLOT 13 word :ADIDAS
+ID DO SLOT 14 word :
+ID DO SLOT 15 word :AVARICE
+ID DO SLOT 16 word :$50BILL
+ID DO SLOT 17 word :
+ID DO SLOT 18 word :AIRWAY
+ID DO SLOT 19 word :
+ID DO SLOT 20 word :ANDS
+===================

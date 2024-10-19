@@ -2,7 +2,7 @@
 
 
 Grid::Grid(){
-    more_dependable = 0;
+    this->most_dependencies = 0;
 };
 Grid::~Grid(){
     
@@ -40,7 +40,9 @@ void Grid::horizontal_search_2(vector<vector<char>> &matrix){
     int ystart;
 
     for(int y = 0; y < matrix.size(); y++){
+
         for(int x = 0; x < matrix[y].size(); x++){
+
             if(matrix[y][x] == '?'){
                 if(!creating_slot){
                     dependencies.clear();
@@ -185,7 +187,7 @@ void Grid::connect_slots(){
             }
         }
         if(slots[i].get_qt_dependencies() > aux){
-            more_dependable = i;
+            most_dependencies = i;
             aux = slots[i].get_qt_dependencies();
         }
     }
@@ -195,17 +197,17 @@ void Grid::print_grid_edges(){
     for(int i =0; i < slots.size(); i++){
         pair<int,int> coord_init = slots[i].get_coord_init();
         pair<int,int> coord_end = slots[i].get_coord_end();
-        std::cout<<"Slot "<<slots[i].get_id()<<": ("<<coord_init.first<<","<<coord_init.second<<") - ("<<coord_end.first<<","<<coord_end.second<<")  ";
+        //std::cout<<"Slot "<<slots[i].get_id()<<": ("<<coord_init.first<<","<<coord_init.second<<") - ("<<coord_end.first<<","<<coord_end.second<<")  ";
         //cout<<"SIZE DOQ EU QUERO"<<slots[i].get_edges().size()<<endl;
-        cout << "Edge to: ";
+        //cout << "Edge to: ";
         for(int j=0; j < slots[i].get_edges().size(); j++){
             pair<Slot*, pair<int,int>> pairAux = slots[i].get_edges()[j];
             Slot* slotAux = pairAux.first;
-            pair<int,int> pairAux2 = pairAux.second;
+            //pair<int,int> pairAux2 = pairAux.second;
             //cout << "Edge to: (" << slotAux->get_coord_init().first<<"," <<slotAux->get_coord_init().second << ")(" <<slotAux->get_coord_end().first<<","<<slotAux->get_coord_end().second<< ") Dependency: (" << pairAux2.first <<"," << pairAux2.second<<")";
-            cout << "(" <<slotAux->get_id() << ") ";
+            //cout << "(" <<slotAux->get_id() << ") ";
         }
-        cout << endl;
+        //cout << endl;
     }
 }
 bool already_exists_fill(unordered_set<string> &words_check, string word){
@@ -216,120 +218,24 @@ bool already_exists_fill(unordered_set<string> &words_check, string word){
     return false;
 }
 
-void Grid::fill_grid(WordTable *table){
-    Slot *most_dependable = &slots[more_dependable];
-    unordered_set<string> used_words;
-    vector<pair<Slot *, pair<int,int>>> queue;
-    vector<Slot *> stack;
-    Slot *current = most_dependable;
-    vector<string *> words = table->get_words_bysize(current->get_size());
-    if(words.size() == 0){
-        std::cerr <<"There are no words this size: " << current->get_size()<<endl;
-        return;
-    }
-    current->set_word(*words[0]);
-    already_exists_fill(used_words, *words[0]);
-
-    
-    stack.push_back(current);
-    
-    cout<<"First word set: "<<current->get_word()<<endl;
-
-    bool done = false;
-    bool exist = true;
-
-    cout<< "A" <<endl;
-    while(!done){
-        int index_current;
-        int index_queue;
-        string hold;
-        /* putting on the queue the next to be visited*/
-        for(int i = 0; i < current->get_edges().size(); i++){
-            if(!current->get_edges()[i].first->visited()){
-                queue.push_back(current->get_edges()[i]);
-            }
-            
-        } 
-        /*now use the queue to check the dependencies*/
-        /* maybe we need a copy of the queue?*/
-        /*queue[x].second.BLA eh a coordenada da dependencia*/
-        /*queue[i].first->get_coord_init() eh a coordenada inicial do slot com dependencia*/
-        for(int i = 0; i < queue.size(); i++){
-            if(current->is_vertical()){
-                    index_current = queue[i].second.first - current->get_coord_init().first;
-                    index_queue   = queue[i].second.first - queue[i].first->get_coord_init().first;
-
-                } else {
-                    index_current = queue[i].second.second - current->get_coord_init().second;
-                    index_queue   = queue[i].second.second - queue[i].first->get_coord_init().second;
-                }
-            if(queue[i].first->get_word() == ""){
-                /*esse get words usa o indice de cima, a palavra do current, e o tamanho do current*/
-                vector<string*> aux = table->get_words_p(current->get_word().at(index_current), index_queue, queue[i].first->get_size());
-                int z = 0;
-                while(already_exists_fill(used_words, *aux[z])){
-                    z++;
-                }
-                queue[i].first->set_word(*aux[z]);
-                cout<< "palavra escolhida para o slot: "<<queue[i].first->get_id() << " foi "<<queue[i].first->get_word() << endl;
-            } else {
-                cout<<"palavra do slot "<<queue[i].first->get_id() <<": "<<queue[i].first->get_word()<<endl;
-            }
-            
-            //std::cin >> hold;
-        }
-        current->set_visited(true);
-        current = queue[0].first;
-        if (!queue.empty()) {
-            queue.erase(queue.begin());
-        } else {
-            done = true;
-        }
-        //check dependency of the first one of the queue
-            //check if dependent has a word
-            //if not, add a word based on the current
-            //if has, check if is valid
-  
-    }
-
-    // cout <<  "current id: " << current->get_id()<<endl;
-    // cout << "has edges to:"<<endl;
-    // for(int i = 0; i < queue.size(); i++){
-    //     vector<pair<int,int>> dependencies = queue[i]->get_dependencies();
-    //     cout<<queue[i]->get_id()<<" shared "<<endl;
-    //     for(int j = 0; j< dependencies.size(); j++){
-    //         cout<< "("<<dependencies[j].first <<","<< dependencies[j].second <<")" <<endl;
-    //     }
-    //     cout<<"======"<<endl;
-    // }
-}
-
 
 
 bool Grid::fill_grid_start(WordTable *table, vector<vector<char>> *matrix){
-    Slot *most_dependable = &slots[more_dependable];
+    Slot *most_dependable = &slots[most_dependencies];
     unordered_set<string> used_words;
     vector<pair<Slot *, pair<int,int>>> queue;
     vector<Slot *> stack;
     Slot *current = most_dependable;
     vector<string *> words = table->get_words_bysize(current->get_size());
-    int i = 0;
     bool done = false;
     while(!done){
-        if(!fill_grid_r_2(table, current, stack)){
-            current->set_visited(false);
-
-        }else{
+        if(fill_grid_r(table, current)){
             done = true;
-        }
-        
+        }   
     }
-    
-    print_words();
 
     for(int i = 0; i < slots.size(); i++){
         pair<int,int> coord_init = slots[i].get_coord_init();
-        pair<int,int> coord_end = slots[i].get_coord_end();
         for(int j = 0; j < slots[i].get_word().size(); j++){
             if(slots[i].is_vertical()){
                 (*matrix)[coord_init.first + j][coord_init.second] = slots[i].get_word().at(j);
@@ -338,235 +244,157 @@ bool Grid::fill_grid_start(WordTable *table, vector<vector<char>> *matrix){
             }
         }
     }
-    
-    return true;
-
-}
-
-string* Grid::find_word(vector<string*> words, vector<pair<char, int>> cells, Slot *current) {
-    if (cells.size() == 0) {
-        for(int i = 0; i < words.size(); i++){
-            if(!current->has_word(*words[i])){
-                this->used_words.push_back(words[i]);
-                current->insert_word(*words[i]);
-                return words[i];
-            }
-        }
-        //cout << "sem cells e sem mais words" << endl;
-        return nullptr;
-    }
-
-    cout<<"used words in fnd word"<< current->get_used_words_size()<<endl;
-
-    for (int i = 0; i < words.size(); i++) {
-        if (current->has_word(*words[i])) {
-            continue; // Skip already used words
-        }
-
-        for (int j = 0; j < cells.size(); j++) {
-            if (words[i]->at(cells[j].second) != cells[j].first) {
-                break;
-            } else if (j == cells.size() - 1) {
-                current->insert_word(*words[i]);
-                this->used_words.push_back(words[i]);
-                return words[i];
-            }
-        }
-    }
-    //cout<<"nao achou nenhuma compativel;"<<endl;
-    return nullptr;
-}
-bool Grid::fill_grid_r_2(WordTable *table, Slot *current, vector<Slot*> stack){
-    vector<string*> words = table->get_words_bysize(current->get_size());
-    vector<pair<Slot*, pair<int,int>>> edges = current->get_edges();
-    vector<pair<char, int>> checks;
-    string *word;
-    string hold;
-    int index_current;
-    int index_edge;
-
-    cout << "SLOT ATUAL: " << current->get_id() << " (" << current->get_coord_init().first << "," << current->get_coord_init().second << ") (" << current->get_coord_end().first << "," << current->get_coord_end().second << ")" << endl;
-    print_words();
-    //std::cin >> hold;
-    for(int i = 0; i < this->used_words.size(); i++){
-        words.erase(std::remove(words.begin(), words.end(), this->used_words[i]), words.end());
-    }
-    /*achando os chars de dependencia e seus indices*/
-    for(int i = 0; i < edges.size(); i++){
-        if(current->is_vertical()){
-                index_current = edges[i].second.first - current->get_coord_init().first;
-        } else {
-                index_current = edges[i].second.second - current->get_coord_init().second;
-        }
-            index_edge = edges[i].first->get_common_position(current);
-            if(edges[i].first->get_word() != ""){
-                checks.push_back(make_pair(char(edges[i].first->get_word().at(index_edge)), index_current));
-            }
-    }
-    stack.push_back(current);
-    
-    if(current->get_word() == ""){
-        bool done = false;
-        
-        while(!done){
-            for(int i = 0; i < edges.size(); i++){
-        if(current->is_vertical()){
-                index_current = edges[i].second.first - current->get_coord_init().first;
-        } else {
-                index_current = edges[i].second.second - current->get_coord_init().second;
-        }
-            index_edge = edges[i].first->get_common_position(current);
-            if(edges[i].first->get_word() != ""){
-                checks.push_back(make_pair(char(edges[i].first->get_word().at(index_edge)), index_current));
-            }
-    }
-            word = find_word(words, checks, current);
-            if(word == nullptr){
-                cout << "nao encontrou palavra nao aqui"<<endl;
-                return false;
-            }
-            current->set_word(*word);
-            bool break_loop = true;
-            for(int i  = 0; i < edges.size(); i ++){
-                if(!fill_grid_r_2(table, edges[i].first, stack)){
-                    if((find(stack.begin(), stack.end(), edges[i].first) !=stack.end())){
-                        continue;
-                        }
-                    for(int j = 0; j < i; j++){
-                        /*nao remove palavras ja colocadas anteriormente*/
-                        if(!(find(stack.begin(), stack.end(), edges[j].first) !=stack.end())){
-                            edges[j].first->clear_used();
-                            edges[j].first->set_word("");
-
-                        }
-                    }
-                    cout << "size antigo: " << current->get_used_words_size() << endl;
-                    table->delete_word_dependencies(*current, checks);
-                    cout << "size novo: " << current->get_used_words_size() << endl;
-                    current->set_word("");
-                    break_loop = false;
-                    break;
-                }
-            }
-            if(break_loop){
-                done = true;
-            }
-        }
-    }
     return true;
 }
-
 
 
 bool Grid::fill_grid_r(WordTable *table, Slot *current){
     vector<pair<Slot*, pair<int,int>>> edges = current->get_edges();
-    vector<pair<char, int>> checks;    
-    //print_words();
+    vector<pair<char, int>> checks;
+    string hold;
     int index_current;
     int index_edge;
-    //cout<< "slot id " <<current->get_id() <<endl;
-    //cout<<current->get_word()<<endl;
-    string hold;
-    //std::cin >>hold;
-    cout << "SLOT ATUAL: " << current->get_id() << " (" << current->get_coord_init().first << "," << current->get_coord_init().second << ") (" << current->get_coord_end().first << "," << current->get_coord_end().second << ")" << endl;
-    vector<string*> words = table->get_words_bysize(current->get_size());
-    if(current->get_word() == ""){
-        //achar uma word, que satisfaça a restrição de current pq nao temos word em current
-        
-        for(int i = 0; i < this->used_words.size(); i++){
-            words.erase(std::remove(words.begin(), words.end(), this->used_words[i]), words.end());
-        }
-        
-        /*coletando dependencias, pra achar uma palavra que cabe*/
+    //system("clear");
+    //cout << "SLOT ATUAL: " << current->get_id() << " (" << current->get_coord_init().first << "," << current->get_coord_init().second << ") (" << current->get_coord_end().first << "," << current->get_coord_end().second << ")" << endl;
+    //print_words();
+
+    // Sleep for 1 millisecond
+    std::this_thread::sleep_for(std::chrono::milliseconds(1));
+
+    // std::cin >> hold;
+    
+    bool checking = true;
+    current->set_visited(true);
+    /*achando os chars de dependencia e seus indices*/
+    while(checking){
         for(int i = 0; i < edges.size(); i++){
             if(current->is_vertical()){
-                index_current = edges[i].second.first - current->get_coord_init().first;
-                //index_edge    = edges[i].second.second - edges[i].first->get_coord_init().first;
-                index_edge = edges[i].first->get_common_position(current);
-                //cout << "index_current: " << index_current << " index_edge: " << index_edge << endl;
+                    index_current = edges[i].second.first - current->get_coord_init().first;
             } else {
-                index_current = edges[i].second.second - current->get_coord_init().second;
-                //index_edge    = edges[i].second.second - edges[i].first->get_coord_init().second;
-                index_edge = edges[i].first->get_common_position(current);
-                //cout << "index_current: " << index_current << " index_edge: " << index_edge << endl;
+                    index_current = edges[i].second.second - current->get_coord_init().second;
             }
+            index_edge = edges[i].first->get_common_position(current);
             if(edges[i].first->get_word() != ""){
                 checks.push_back(make_pair(char(edges[i].first->get_word().at(index_edge)), index_current));
-                //cout << "check: " << char(edges[i].first->get_word().at(index_edge)) << " index: " << index_edge << endl;
             }
         }
-        /*essa função acha uma palavra que satisfaz as dependcias*/
-        string* word = find_word(words, checks, current);
-        /*se for null eh pq nao tem palavra que caiba, essa parte da solução morreu*/
-        if(word == nullptr){
-            cout<<"sem palavra"<<endl;
-            //cout<<"slot atual = "<<  current->get_id()<<endl;
-            for(int z = 0; z< edges.size();z++){
-                edges[z].first->set_visited(false); /*zerando os filhos pq se deu ruim aqui, os de baixo vai mudar*/
-            }
-            current->set_word("");
-            current->set_visited(false);
-            return false;
-        } else {
-            current->set_word(*word);
-            this->used_words.push_back(word);
-        }
-    } else {
-        /*temos uma word em current, precisamos ver se ela ta cumprindo as restrições*/
-        for(int i = 0; i < edges.size(); i++){
-            if(current->is_vertical()){
-                index_current = edges[i].second.first - current->get_coord_init().first;
-                index_edge    = edges[i].second.first - edges[i].first->get_coord_init().first;
-            } else {
-                index_current = edges[i].second.second - current->get_coord_init().second;
-                index_edge    = edges[i].second.second - edges[i].first->get_coord_init().second;
-            }
-            /*se isso aqui der falso, quer dizer que nao ta cumprindo a restrição*/
-            if(edges[i].first->get_word() != ""){ /*verifica se a dependencia ja tem palavra ou n*/
-                if(edges[i].first->get_word().at(index_edge) != current->get_word().at(index_current)){
-                    cout<<"dependencias falharam"<<endl;
-                    current->set_word("");
-                    current->set_visited(false);
-                    for(int j = 0; j <edges.size(); j++){
-                        edges[j].first->set_visited(false);
-                    }
-                    return false;
-                }
-            }
-        }
-    }
-    current->set_visited(true);
-    for(int i = 0; i < edges.size(); i ++){
-        if(!edges[i].first->visited()){
-            if(fill_grid_r(table, edges[i].first) == false){
-                //cout<<"falhou a recursão"<<endl;
-                for(int j = 0; j <edges.size(); j++){
-                    edges[j].first->set_visited(false);
-                    edges[j].first->set_word("");
-                    edges[j].first->clear_used();
-                }
-                i = 0;
+        if(current->get_word() == ""){
+            if(!choose_word(checks,current, table)){
                 current->set_visited(false);
-                current->set_word("");
-
+                //cout<< "failed for the first word"<<endl;
                 return false;
             }
         }
-        
-    }
-    cout<<"deu certo a word"<<endl;
-    //this->used_words.push_back(*word);
-    return true;
-
-}
-
-string* Grid::find_string_ref(string str){
-     for (const auto& word_ptr : used_words) {
-        if (*word_ptr == str) {
-            return word_ptr;
+        if(!check_dependencies(checks, current, table)){
+            current->set_visited(false);
+            used_words.erase(current->get_word());
+            current->set_word("");
+            //cout<< "failed dependencies"<<endl;
+            return false;
+        }
+        for(int j = 0; j < 501; j ++){
+            bool word_failed = false;
+            for(int i = 0; i < edges.size(); i++){
+                if(!edges[i].first->visited()){
+                    if(!fill_grid_r(table, edges[i].first)){
+                        word_failed = true;
+                        //cout << " word failed tryin again" <<endl;
+                        break;
+                    }
+                }
+            }
+            if(word_failed){
+                if(j == 500){
+                    
+                    //cout << " word failed 3 times returning" <<endl;
+                    current->set_visited(false);
+                    return false;
+                } else {
+                    if(!choose_word(checks,current, table)){
+                        current->set_visited(false);
+                        used_words.erase(current->get_word());
+                        current->set_word("");
+                        //cout<<"falhou nas 5 tentativas"<< endl;
+                        return false;
+                    }
+                }
+            } else{
+                if(j == 500){
+                    //cout<<"finished slot"<<current->get_id()<<endl;
+                    checking = false;
+                }
+            }
         }
     }
-    return nullptr;
+    return true;
+}
+
+bool Grid::choose_word(vector<pair<char,int>> checks, Slot* current, WordTable* table){
+    vector<string*> word_list;
+    vector<int> hashes_to_find;
+    int slot_size = current->get_size();
+    if(checks.size()==0){
+        word_list = table->get_words_bysize(current->get_size());
+        //cout<< "nao tinha checks" <<endl;
+    } else{
+        int smallest_list_index= 0x7fffffff; /*biggest possible postive number*/
+        for(int i = 0; i < checks.size(); i++){
+            int hash = table->charHash(checks[i].first,checks[i].second, slot_size);
+            hashes_to_find.push_back(hash);
+            //cout<<"getting list of hash:"<<std::hex<<hash<<endl;
+            //cout<<std::dec;
+            if(smallest_list_index > table->get_list_size(hash)){
+                smallest_list_index = i;
+                //cout<<"new smallest list hash "<<checks[i].first<< " "<< checks[i].second<<" "<<slot_size << endl;
+            }
+        }
+        word_list = table->get_words_p(checks[smallest_list_index].first, checks[smallest_list_index].second, slot_size);
+    }
+    /*CUIDAR DEPOIS PRA VER SE NAO TO PEGANDO PALAVRA BANIDA*/
+        for(int i = 0; i < word_list.size(); i++){
+            bool failed = false;
+            if((used_words.find(*word_list[i]) != used_words.end())){
+                //cout<< "palavra já no grid"<<endl;
+                continue;
+            } else{
+                for(int j = 0; j < checks.size(); j ++){
+                    if(checks[j].first != word_list[i]->at(checks[j].second)){
+                        failed = true;
+                        //cout<<"falhou word " << *word_list[i]<<endl;
+                        break;
+                    } else if(current->check_bans(table->charHash(checks[j].first,checks[j].second, slot_size))){
+                        failed = true;
+                        break;
+                    }
+                }
+            }
+            if(!failed){
+                current->set_word(*word_list[i]);
+                used_words.insert(*word_list[i]);
+                return true;
+            }
+        }
+    //cout<< "nao conseguiu escolher palavra em choose_word" << endl;
+    return false;
+}
+bool Grid::check_dependencies(vector<pair<char,int>> checks, Slot *current, WordTable* table){
+
+    if((checks.size() == 0)){
+        return true;
+    }
+    bool  passed = true;
+    for(int i = 0; i < checks.size(); i ++){
+        if(checks[i].first != current->get_word().at(checks[i].second)){
+            int hash = table->charHash(checks[i].first, checks[i].second,current->get_word().size());
+            current->ban_hash(hash);
+            passed = false;
+            cout<<"word "<<current->get_word()<<endl;
+            cout<<"checking char: "<< checks[i].first<< " at "<< checks[i].second<<endl;
+            cout<< "banning hash: " << std::hex<<hash<<endl;
+            cout<< std::dec;  
+        }
+    }
+    return passed;
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 //
@@ -711,5 +539,5 @@ void Grid::print_graphviz(const std::string &filename) {
 }
 
 int Grid::get_most_dependable(){
-    return more_dependable;
+    return most_dependencies;
 }
